@@ -226,7 +226,9 @@ namespace BTL_C_
                 image = parts[parts.Length - 1];
 
                 // Copy ảnh vào thư mục bin\Debug\Images
-                string imagesFolder = Path.Combine(Application.StartupPath, "Images");
+                //string imagesFolder = Path.Combine(Application.StartupPath, "Images");
+                string imagesFolder = Path.Combine(Application.StartupPath, @"..\..\Images");
+
                 if (!Directory.Exists(imagesFolder))
                 {
                     Directory.CreateDirectory(imagesFolder);
