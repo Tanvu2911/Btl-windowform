@@ -20,6 +20,11 @@ namespace BTL_C_
         {
             InitializeComponent();
         }
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            tbUserName.Text = "admin";
+            tbPassword.Text = "123";
+        }
 
         private void label2_Click(object sender, EventArgs e)
         {
@@ -49,7 +54,7 @@ namespace BTL_C_
                 DataTable dtmk = dtbase.DocBang(sqlMk);
                 if (dtmk.Rows.Count != 0)
                 {
-                    MessageBox.Show("Dang nhap thanh cong");
+                    //MessageBox.Show("Dang nhap thanh cong");
                     DialogResult = DialogResult.OK;
                     string sqlareas = ("select Role from dbo.Users where UserName = N'" + tbUserName.Text + "'");
                     DataTable dtAreas = dtbase.DocBang(sqlareas);
@@ -87,5 +92,12 @@ namespace BTL_C_
         {
             Close();
         }
+
+        private void tbUserName_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        
     }
 }
