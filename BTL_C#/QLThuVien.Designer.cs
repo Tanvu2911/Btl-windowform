@@ -31,7 +31,7 @@ namespace BTL_C_
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.ptLogo = new System.Windows.Forms.PictureBox();
             this.scoll = new System.Windows.Forms.Panel();
             this.btnDocGia = new System.Windows.Forms.Button();
             this.btnMuonTra = new System.Windows.Forms.Button();
@@ -39,20 +39,25 @@ namespace BTL_C_
             this.btnThongKe = new System.Windows.Forms.Button();
             this.btnSach = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.docGia2 = new BTL_C_.UCs.DocGia();
-            this.searchSach1 = new BTL_C_.SearchSach();
             this.panel3 = new System.Windows.Forms.Panel();
             this.lbTen = new System.Windows.Forms.Label();
+            this.btnLogOut = new System.Windows.Forms.Button();
+            this.btnTaiKhoan = new System.Windows.Forms.Button();
+            this.docGia2 = new BTL_C_.UCs.DocGia();
+            this.searchSach1 = new BTL_C_.SearchSach();
+            this.ptAvartar = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptLogo)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ptAvartar)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.PeachPuff;
-            this.panel1.Controls.Add(this.pictureBox1);
+            this.panel1.Controls.Add(this.btnTaiKhoan);
+            this.panel1.Controls.Add(this.ptLogo);
             this.panel1.Controls.Add(this.scoll);
             this.panel1.Controls.Add(this.btnDocGia);
             this.panel1.Controls.Add(this.btnMuonTra);
@@ -66,15 +71,16 @@ namespace BTL_C_
             this.panel1.TabIndex = 0;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
-            // pictureBox1
+            // ptLogo
             // 
-            this.pictureBox1.Image = global::BTL_C_.Properties.Resources.anh;
-            this.pictureBox1.Location = new System.Drawing.Point(12, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(164, 138);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 9;
-            this.pictureBox1.TabStop = false;
+            this.ptLogo.Image = global::BTL_C_.Properties.Resources.anh;
+            this.ptLogo.Location = new System.Drawing.Point(0, 0);
+            this.ptLogo.Name = "ptLogo";
+            this.ptLogo.Size = new System.Drawing.Size(194, 173);
+            this.ptLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ptLogo.TabIndex = 9;
+            this.ptLogo.TabStop = false;
+            this.ptLogo.Click += new System.EventHandler(this.ptLogo_Click);
             // 
             // scoll
             // 
@@ -169,6 +175,55 @@ namespace BTL_C_
             this.panel2.Size = new System.Drawing.Size(1008, 657);
             this.panel2.TabIndex = 1;
             // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.Bisque;
+            this.panel3.Controls.Add(this.ptAvartar);
+            this.panel3.Controls.Add(this.btnLogOut);
+            this.panel3.Controls.Add(this.lbTen);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel3.Location = new System.Drawing.Point(194, 0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(1008, 83);
+            this.panel3.TabIndex = 2;
+            // 
+            // lbTen
+            // 
+            this.lbTen.AutoSize = true;
+            this.lbTen.Font = new System.Drawing.Font("Lucida Console", 10F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTen.Location = new System.Drawing.Point(95, 34);
+            this.lbTen.Name = "lbTen";
+            this.lbTen.Size = new System.Drawing.Size(129, 20);
+            this.lbTen.TabIndex = 0;
+            this.lbTen.Text = "Xin chào :";
+            // 
+            // btnLogOut
+            // 
+            this.btnLogOut.BackColor = System.Drawing.Color.Bisque;
+            this.btnLogOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnLogOut.Location = new System.Drawing.Point(847, 0);
+            this.btnLogOut.Name = "btnLogOut";
+            this.btnLogOut.Size = new System.Drawing.Size(161, 83);
+            this.btnLogOut.TabIndex = 1;
+            this.btnLogOut.Text = "Đăng xuất";
+            this.btnLogOut.UseVisualStyleBackColor = false;
+            this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
+            // 
+            // btnTaiKhoan
+            // 
+            this.btnTaiKhoan.BackColor = System.Drawing.Color.PeachPuff;
+            this.btnTaiKhoan.FlatAppearance.BorderSize = 0;
+            this.btnTaiKhoan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTaiKhoan.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnTaiKhoan.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnTaiKhoan.Location = new System.Drawing.Point(4, 478);
+            this.btnTaiKhoan.Name = "btnTaiKhoan";
+            this.btnTaiKhoan.Size = new System.Drawing.Size(184, 49);
+            this.btnTaiKhoan.TabIndex = 10;
+            this.btnTaiKhoan.Text = "Tài Khoản";
+            this.btnTaiKhoan.UseVisualStyleBackColor = false;
+            this.btnTaiKhoan.Click += new System.EventHandler(this.btnTaiKhoan_Click);
+            // 
             // docGia2
             // 
             this.docGia2.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -186,25 +241,13 @@ namespace BTL_C_
             this.searchSach1.Size = new System.Drawing.Size(1008, 657);
             this.searchSach1.TabIndex = 0;
             // 
-            // panel3
+            // ptAvartar
             // 
-            this.panel3.BackColor = System.Drawing.Color.Bisque;
-            this.panel3.Controls.Add(this.lbTen);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel3.Location = new System.Drawing.Point(194, 0);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1008, 83);
-            this.panel3.TabIndex = 2;
-            // 
-            // lbTen
-            // 
-            this.lbTen.AutoSize = true;
-            this.lbTen.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.lbTen.Location = new System.Drawing.Point(613, 34);
-            this.lbTen.Name = "lbTen";
-            this.lbTen.Size = new System.Drawing.Size(160, 37);
-            this.lbTen.TabIndex = 0;
-            this.lbTen.Text = "Xin chào :";
+            this.ptAvartar.Location = new System.Drawing.Point(15, 14);
+            this.ptAvartar.Name = "ptAvartar";
+            this.ptAvartar.Size = new System.Drawing.Size(63, 59);
+            this.ptAvartar.TabIndex = 2;
+            this.ptAvartar.TabStop = false;
             // 
             // QLThuVien
             // 
@@ -219,10 +262,11 @@ namespace BTL_C_
             this.Text = "QLThuVien";
             this.Load += new System.EventHandler(this.QLThuVien_Load);
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptLogo)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ptAvartar)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -241,8 +285,11 @@ namespace BTL_C_
         private QLSach qlsach1;
         //private DocGia DocGia1;
         private DocGia docGia2;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox ptLogo;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label lbTen;
+        private System.Windows.Forms.Button btnLogOut;
+        private System.Windows.Forms.Button btnTaiKhoan;
+        private System.Windows.Forms.PictureBox ptAvartar;
     }
 }

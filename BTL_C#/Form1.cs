@@ -49,16 +49,31 @@ namespace BTL_C_
                 DataTable dtmk = dtbase.DocBang(sqlMk);
                 if (dtmk.Rows.Count != 0)
                 {
-                    MessageBox.Show("Dang nhap thanh cong");
-                    DialogResult = DialogResult.OK;
-                    string sqlareas = ("select Role from dbo.Users where UserName = N'" + tbUserName.Text + "'");
+                    //MessageBox.Show("Dang nhap thanh cong");
+                    //DialogResult = DialogResult.OK;
+                    //string sqlareas = ("select Role from dbo.Users where UserName = N'" + tbUserName.Text + "'");
+                    //DataTable dtAreas = dtbase.DocBang(sqlareas);
+
+                    //LoggedInRole = dtAreas.Rows[0]["Role"].ToString();
+                    //name = tbUserName.Text;
+                    //DialogResult = DialogResult.OK;
+                    //Close();
+
+                    
+
+                    MessageBox.Show("Đăng nhập thành công!");
+
+                    string sqlareas = "SELECT Role FROM dbo.Users WHERE UserName = N'" + tbUserName.Text + "'";
                     DataTable dtAreas = dtbase.DocBang(sqlareas);
 
                     LoggedInRole = dtAreas.Rows[0]["Role"].ToString();
                     name = tbUserName.Text;
-                    DialogResult = DialogResult.OK;
-                    Close();
-                    
+
+                    // Đặt DialogResult = OK SAU KHI xử lý xong dữ liệu
+                    this.DialogResult = DialogResult.OK;
+                    this.Close();
+
+
                     return;
                 }
                 else
