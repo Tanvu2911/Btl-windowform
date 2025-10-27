@@ -12,7 +12,7 @@ using System.Windows.Forms;
 
 namespace BTL_C_
 {
-    public partial class QLSach : UserControl
+    public partial class QLSach : System.Windows.Forms.UserControl
     {
         Classes.DataProcesser dtbase = new Classes.DataProcesser();
         Classes.Funtion ft = new Classes.Funtion();

@@ -12,9 +12,11 @@ namespace BTL_C_
 {
     public partial class QLThuVien : Form
     {
+
         public QLThuVien()
         {
             InitializeComponent();
+            searchSach1.BringToFront();
         }
 
         private void qlSach1_Load(object sender, EventArgs e)
@@ -31,13 +33,14 @@ namespace BTL_C_
         {
             scoll.Height= btnSach.Height;
             scoll.Top = btnSach.Top;
-            //qlSach1.BringToFront();
+            searchSach1.BringToFront();
         }
 
         private void btnDocGia_Click(object sender, EventArgs e)
         {
             scoll.Height = btnDocGia.Height;
             scoll.Top = btnDocGia.Top;
+            docGia2.BringToFront();
         }
 
         private void button8_Click(object sender, EventArgs e)
@@ -56,6 +59,11 @@ namespace BTL_C_
         {
             scoll.Height = btnThongKe.Height;
             scoll.Top = btnThongKe.Top;
+        }
+
+        private void QLThuVien_Load(object sender, EventArgs e)
+        {
+            lbTen.Text += Form1.name;
         }
     }
 }

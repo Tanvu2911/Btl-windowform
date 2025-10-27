@@ -15,6 +15,7 @@ namespace BTL_C_
     {
         Classes.DataProcesser dtbase = new Classes.DataProcesser();
         public static string LoggedInRole { get; private set; }
+        public static string name = "";
         public Form1()
         {
             InitializeComponent();
@@ -54,7 +55,7 @@ namespace BTL_C_
                     DataTable dtAreas = dtbase.DocBang(sqlareas);
 
                     LoggedInRole = dtAreas.Rows[0]["Role"].ToString();
-                   
+                    name = tbUserName.Text;
                     DialogResult = DialogResult.OK;
                     Close();
                     

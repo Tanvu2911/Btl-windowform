@@ -33,6 +33,10 @@ namespace BTL_C_
             dgvSach.DataSource = dtSanPham;
             cb1.SelectedIndex = -1;
 
+
+            dgvSach.DefaultCellStyle.ForeColor = Color.Black;
+
+
         }
 
         private void dgvSach_CellContentClick(object sender, DataGridViewCellEventArgs e)

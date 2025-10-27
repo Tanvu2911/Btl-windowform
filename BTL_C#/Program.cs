@@ -24,9 +24,7 @@ namespace BTL_C_
             {
                 if (Form1.LoggedInRole == "Admin")
                 {
-                    Application.Run(new QLThuVien());
-                    //Application.Run(new Sach());
-                }
+                    Application.Run(new QLThuVien());                }
                 else if (Form1.LoggedInRole == "Customer")
                 {
                     

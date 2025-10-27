@@ -31,9 +31,8 @@
             this.components = new System.ComponentModel.Container();
             this.btSach = new System.Windows.Forms.Button();
             this.btTheLoai = new System.Windows.Forms.Button();
-            this.btTacGia = new System.Windows.Forms.Button();
-            this.btNhaXuatBan = new System.Windows.Forms.Button();
             this.gbTimKiem = new System.Windows.Forms.GroupBox();
+            this.btnReset = new System.Windows.Forms.Button();
             this.cb1 = new System.Windows.Forms.ComboBox();
             this.rbtTacGia = new System.Windows.Forms.RadioButton();
             this.rbtNhaXuatBan = new System.Windows.Forms.RadioButton();
@@ -47,43 +46,30 @@
             // 
             // btSach
             // 
+            this.btSach.BackColor = System.Drawing.Color.PeachPuff;
             this.btSach.Location = new System.Drawing.Point(63, 39);
             this.btSach.Name = "btSach";
             this.btSach.Size = new System.Drawing.Size(122, 39);
             this.btSach.TabIndex = 1;
             this.btSach.Text = "Sách";
-            this.btSach.UseVisualStyleBackColor = true;
+            this.btSach.UseVisualStyleBackColor = false;
             this.btSach.Click += new System.EventHandler(this.btSach_Click);
             // 
             // btTheLoai
             // 
+            this.btTheLoai.BackColor = System.Drawing.Color.PeachPuff;
             this.btTheLoai.Location = new System.Drawing.Point(201, 39);
             this.btTheLoai.Name = "btTheLoai";
             this.btTheLoai.Size = new System.Drawing.Size(122, 39);
             this.btTheLoai.TabIndex = 2;
             this.btTheLoai.Text = "Thể loại";
-            this.btTheLoai.UseVisualStyleBackColor = true;
-            // 
-            // btTacGia
-            // 
-            this.btTacGia.Location = new System.Drawing.Point(349, 39);
-            this.btTacGia.Name = "btTacGia";
-            this.btTacGia.Size = new System.Drawing.Size(122, 39);
-            this.btTacGia.TabIndex = 3;
-            this.btTacGia.Text = "Tác giả";
-            this.btTacGia.UseVisualStyleBackColor = true;
-            // 
-            // btNhaXuatBan
-            // 
-            this.btNhaXuatBan.Location = new System.Drawing.Point(505, 39);
-            this.btNhaXuatBan.Name = "btNhaXuatBan";
-            this.btNhaXuatBan.Size = new System.Drawing.Size(122, 39);
-            this.btNhaXuatBan.TabIndex = 4;
-            this.btNhaXuatBan.Text = "Nhà xuất bản";
-            this.btNhaXuatBan.UseVisualStyleBackColor = true;
+            this.btTheLoai.UseVisualStyleBackColor = false;
+            this.btTheLoai.Click += new System.EventHandler(this.btTheLoai_Click);
             // 
             // gbTimKiem
             // 
+            this.gbTimKiem.BackColor = System.Drawing.Color.Wheat;
+            this.gbTimKiem.Controls.Add(this.btnReset);
             this.gbTimKiem.Controls.Add(this.cb1);
             this.gbTimKiem.Controls.Add(this.rbtTacGia);
             this.gbTimKiem.Controls.Add(this.rbtNhaXuatBan);
@@ -91,15 +77,25 @@
             this.gbTimKiem.Controls.Add(this.tbTim);
             this.gbTimKiem.Location = new System.Drawing.Point(66, 117);
             this.gbTimKiem.Name = "gbTimKiem";
-            this.gbTimKiem.Size = new System.Drawing.Size(752, 136);
+            this.gbTimKiem.Size = new System.Drawing.Size(908, 136);
             this.gbTimKiem.TabIndex = 5;
             this.gbTimKiem.TabStop = false;
             this.gbTimKiem.Text = "Tìm kiếm";
             // 
+            // btnReset
+            // 
+            this.btnReset.Location = new System.Drawing.Point(732, 51);
+            this.btnReset.Name = "btnReset";
+            this.btnReset.Size = new System.Drawing.Size(97, 31);
+            this.btnReset.TabIndex = 6;
+            this.btnReset.Text = "Reset";
+            this.btnReset.UseVisualStyleBackColor = true;
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
+            // 
             // cb1
             // 
             this.cb1.FormattingEnabled = true;
-            this.cb1.Location = new System.Drawing.Point(563, 58);
+            this.cb1.Location = new System.Drawing.Point(542, 51);
             this.cb1.Name = "cb1";
             this.cb1.Size = new System.Drawing.Size(156, 28);
             this.cb1.TabIndex = 5;
@@ -109,7 +105,7 @@
             // rbtTacGia
             // 
             this.rbtTacGia.AutoSize = true;
-            this.rbtTacGia.Location = new System.Drawing.Point(209, 56);
+            this.rbtTacGia.Location = new System.Drawing.Point(235, 52);
             this.rbtTacGia.Name = "rbtTacGia";
             this.rbtTacGia.Size = new System.Drawing.Size(85, 24);
             this.rbtTacGia.TabIndex = 4;
@@ -120,7 +116,7 @@
             // rbtNhaXuatBan
             // 
             this.rbtNhaXuatBan.AutoSize = true;
-            this.rbtNhaXuatBan.Location = new System.Drawing.Point(354, 58);
+            this.rbtNhaXuatBan.Location = new System.Drawing.Point(380, 54);
             this.rbtNhaXuatBan.Name = "rbtNhaXuatBan";
             this.rbtNhaXuatBan.Size = new System.Drawing.Size(134, 24);
             this.rbtNhaXuatBan.TabIndex = 3;
@@ -131,7 +127,7 @@
             // rbtTenSach
             // 
             this.rbtTenSach.AutoSize = true;
-            this.rbtTenSach.Location = new System.Drawing.Point(49, 56);
+            this.rbtTenSach.Location = new System.Drawing.Point(75, 52);
             this.rbtTenSach.Name = "rbtTenSach";
             this.rbtTenSach.Size = new System.Drawing.Size(102, 24);
             this.rbtTenSach.TabIndex = 1;
@@ -141,7 +137,7 @@
             // 
             // tbTim
             // 
-            this.tbTim.Location = new System.Drawing.Point(188, 94);
+            this.tbTim.Location = new System.Drawing.Point(258, 95);
             this.tbTim.Name = "tbTim";
             this.tbTim.Size = new System.Drawing.Size(343, 26);
             this.tbTim.TabIndex = 0;
@@ -155,26 +151,27 @@
             // 
             // dgvSach
             // 
+            this.dgvSach.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dgvSach.BackgroundColor = System.Drawing.Color.MintCream;
             this.dgvSach.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvSach.Location = new System.Drawing.Point(66, 279);
             this.dgvSach.Name = "dgvSach";
             this.dgvSach.RowHeadersWidth = 62;
             this.dgvSach.RowTemplate.Height = 28;
-            this.dgvSach.Size = new System.Drawing.Size(752, 218);
+            this.dgvSach.Size = new System.Drawing.Size(908, 298);
             this.dgvSach.TabIndex = 0;
             // 
             // SearchSach
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.Controls.Add(this.gbTimKiem);
-            this.Controls.Add(this.btNhaXuatBan);
-            this.Controls.Add(this.btTacGia);
             this.Controls.Add(this.btTheLoai);
             this.Controls.Add(this.btSach);
             this.Controls.Add(this.dgvSach);
             this.Name = "SearchSach";
-            this.Size = new System.Drawing.Size(901, 543);
+            this.Size = new System.Drawing.Size(1039, 601);
             this.Load += new System.EventHandler(this.SearchSach_Load);
             this.gbTimKiem.ResumeLayout(false);
             this.gbTimKiem.PerformLayout();
@@ -186,8 +183,6 @@
         #endregion
         private System.Windows.Forms.Button btSach;
         private System.Windows.Forms.Button btTheLoai;
-        private System.Windows.Forms.Button btTacGia;
-        private System.Windows.Forms.Button btNhaXuatBan;
         private System.Windows.Forms.GroupBox gbTimKiem;
         private System.Windows.Forms.RadioButton rbtTacGia;
         private System.Windows.Forms.RadioButton rbtNhaXuatBan;
@@ -196,5 +191,6 @@
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.DataGridView dgvSach;
         private System.Windows.Forms.ComboBox cb1;
+        private System.Windows.Forms.Button btnReset;
     }
 }

@@ -62,16 +62,28 @@
     <Compile Include="Sach.Designer.cs">
       <DependentUpon>Sach.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControl\SearchSach.cs">
+    <Compile Include="TheLoai.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TheLoai.Designer.cs">
+      <DependentUpon>TheLoai.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCs\DocGia.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControl\SearchSach.Designer.cs">
+    <Compile Include="UCs\DocGia.Designer.cs">
+      <DependentUpon>DocGia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCs\SearchSach.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCs\SearchSach.Designer.cs">
       <DependentUpon>SearchSach.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControl\QLSach.cs">
+    <Compile Include="UCs\QLSach.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControl\QLSach.Designer.cs">
+    <Compile Include="UCs\QLSach.Designer.cs">
       <DependentUpon>QLSach.cs</DependentUpon>
     </Compile>
     <Compile Include="QLThuVien.cs">
@@ -96,10 +108,16 @@
     <EmbeddedResource Include="Sach.resx">
       <DependentUpon>Sach.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControl\SearchSach.resx">
+    <EmbeddedResource Include="TheLoai.resx">
+      <DependentUpon>TheLoai.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCs\DocGia.resx">
+      <DependentUpon>DocGia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCs\SearchSach.resx">
       <DependentUpon>SearchSach.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControl\QLSach.resx">
+    <EmbeddedResource Include="UCs\QLSach.resx">
       <DependentUpon>QLSach.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="QLThuVien.resx">
@@ -122,6 +140,7 @@
   <ItemGroup>
     <Content Include="bin\Debug\BTL_C#.exe" />
     <Content Include="bin\Debug\BTL_C#.pdb" />
+    <None Include="Resources\anh.jpg" />
     <None Include="Resources\libary2.jpg" />
     <None Include="Resources\libary1.jpg" />
     <None Include="Resources\584b7675-544f-468b-b9bc-5ea333d12527.png" />
