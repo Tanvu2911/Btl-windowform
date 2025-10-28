@@ -27,7 +27,6 @@ namespace BTL_C_.UCs
         }
         private void LoadData()
         {
-            button1.Enabled = false;
             button2.Enabled = false;
             button3.Enabled = false;
             txtMaDG.Enabled = false;
@@ -38,24 +37,50 @@ namespace BTL_C_.UCs
 
         private void dgvDocGia_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (dgvDocGia.Rows[e.RowIndex].IsNewRow || e.RowIndex < 0)
+            // 🧱 1️⃣ Nếu click vào header hoặc ngoài vùng dữ liệu => thoát luôn
+            if (e.RowIndex < 0 || e.RowIndex >= dgvDocGia.Rows.Count)
             {
                 button2.Enabled = false;
                 button3.Enabled = false;
                 button1.Enabled = true;
+
+                txtMaDG.Clear();
+                txtHoTen.Clear();
+                txtDiaChi.Clear();
+                txtDienThoai.Clear();
+                return;
             }
-            if (e.RowIndex >= 0 && e.RowIndex < dgvDocGia.Rows.Count)
+
+            // 🧱 2️⃣ Nếu dòng là dòng trống (dòng "new row") => thoát luôn
+            if (dgvDocGia.Rows[e.RowIndex].IsNewRow)
             {
-                txtMaDG.Text = dgvDocGia.Rows[e.RowIndex].Cells["MaDG"].Value.ToString();
-                txtHoTen.Text = dgvDocGia.Rows[e.RowIndex].Cells["HoTen"].Value.ToString();
-                if (DateTime.TryParse(dgvDocGia.Rows[e.RowIndex].Cells["NgaySinh"].Value.ToString(), out DateTime ngaySinh))
-                {
-                    dtpNgaySinh.Value = ngaySinh;
-                }
-                txtDiaChi.Text = dgvDocGia.Rows[e.RowIndex].Cells["DiaChi"].Value.ToString();
-                txtDienThoai.Text = dgvDocGia.Rows[e.RowIndex].Cells["DienThoai"].Value.ToString();
+                button2.Enabled = false;
+                button3.Enabled = false;
+                button1.Enabled = true;
+
+                txtMaDG.Clear();
+                txtHoTen.Clear();
+                txtDiaChi.Clear();
+                txtDienThoai.Clear();
+                return;
             }
+
+            // 🧱 3️⃣ Nếu dòng hợp lệ => hiển thị dữ liệu
+            button1.Enabled = false;
+            button2.Enabled = true;
+            button3.Enabled = true;
+
+            var row = dgvDocGia.Rows[e.RowIndex];
+
+            txtMaDG.Text = row.Cells["MaDG"].Value?.ToString();
+            txtHoTen.Text = row.Cells["HoTen"].Value?.ToString();
+            txtDiaChi.Text = row.Cells["DiaChi"].Value?.ToString();
+            txtDienThoai.Text = row.Cells["DienThoai"].Value?.ToString();
+
+            if (DateTime.TryParse(row.Cells["NgaySinh"].Value?.ToString(), out DateTime ngay))
+                dtpNgaySinh.Value = ngay;
         }
+
 
         private void button1_Click(object sender, EventArgs e)
         {
