@@ -83,6 +83,16 @@ namespace BTL_C_.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap images_Photoroom {
+            get {
+                object obj = ResourceManager.GetObject("images-Photoroom", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap libary1 {
             get {
                 object obj = ResourceManager.GetObject("libary1", resourceCulture);

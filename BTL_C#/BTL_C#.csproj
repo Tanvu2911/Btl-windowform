@@ -140,6 +140,7 @@
   <ItemGroup>
     <Content Include="bin\Debug\BTL_C#.exe" />
     <Content Include="bin\Debug\BTL_C#.pdb" />
+    <None Include="Resources\images-Photoroom.png" />
     <None Include="Resources\anh.jpg" />
     <None Include="Resources\libary2.jpg" />
     <None Include="Resources\libary1.jpg" />
