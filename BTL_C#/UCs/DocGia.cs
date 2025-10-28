@@ -30,9 +30,41 @@ namespace BTL_C_.UCs
             button2.Enabled = false;
             button3.Enabled = false;
             txtMaDG.Enabled = false;
-            string sql = "SELECT MaDG, HoTen, CONVERT(varchar, NgaySinh, 103) AS NgaySinh, DiaChi, DienThoai FROM DocGia";
+            string sql = @"
+                        SELECT 
+                            dg.MaDG, 
+                            dg.HoTen, 
+                            dg.NgaySinh, 
+                            dg.DiaChi, 
+                            dg.DienThoai,
+
+                            -- Tổng số sách đã từng mượn
+                            COUNT(ctm.MaSach) AS TongSoSachDaMuon,
+
+                            -- Số sách đang mượn (TrangThai = 'Đang mượn')
+                            SUM(CASE WHEN ctm.TrangThai = N'Đang mượn' THEN 1 ELSE 0 END) AS SoSachDangMuon
+
+                        FROM DocGia dg
+                        LEFT JOIN PhieuMuon pm ON dg.MaDG = pm.MaDG
+                        LEFT JOIN ChiTietMuon ctm ON pm.MaPhieu = ctm.MaPhieu
+                        GROUP BY dg.MaDG, dg.HoTen, dg.NgaySinh, dg.DiaChi, dg.DienThoai
+                        ";
             dtDocGia = dtBase.DocBang(sql);
             dgvDocGia.DataSource = dtDocGia;
+            dgvDocGia.Columns["MaDG"].HeaderText = "Mã độc giả";
+            dgvDocGia.Columns["HoTen"].HeaderText = "Họ và tên";
+            dgvDocGia.Columns["TongSoSachDaMuon"].HeaderText = "Tổng số sách đã mượn";
+            dgvDocGia.Columns["SoSachDangMuon"].HeaderText = "Số sách đang mượn";
+            dgvDocGia.Columns["NgaySinh"].HeaderText = "Ngày sinh";
+            dgvDocGia.Columns["DiaChi"].HeaderText = "Địa chỉ";
+            dgvDocGia.Columns["DienThoai"].HeaderText = "Số điện thoại";
+
+            // Tùy chọn: căn giữa tiêu đề và chỉnh độ rộng
+            foreach (DataGridViewColumn col in dgvDocGia.Columns)
+            {
+                col.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                col.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            }
         }
 
         private void dgvDocGia_CellClick(object sender, DataGridViewCellEventArgs e)
