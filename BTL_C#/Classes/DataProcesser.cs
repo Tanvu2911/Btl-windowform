@@ -11,7 +11,7 @@ namespace BTL_C_.Classes
     internal class DataProcesser
     {
 
-        string strconnection = "Data source=CUTỄUGAMING\\SQLEXPRESS;Database=QLThuVien;Integrated Security=True";
+        string strconnection = "Data source=ADMIN\\SQLEXPRESS;Database=QLThuVien;Integrated Security=True";
         SqlConnection SqlConnection = null;
         public void KetNoiCSDL()
         {

@@ -20,6 +20,11 @@ namespace BTL_C_
         {
             InitializeComponent();
         }
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            tbUserName.Text = "admin";
+            tbPassword.Text = "123";
+        }
 
         private void label2_Click(object sender, EventArgs e)
         {
@@ -102,5 +107,12 @@ namespace BTL_C_
         {
             Close();
         }
+
+        private void tbUserName_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        
     }
 }
