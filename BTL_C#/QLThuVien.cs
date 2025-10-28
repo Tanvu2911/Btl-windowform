@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BTL_C_.UCs;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -48,6 +49,11 @@ namespace BTL_C_
         {
             scoll.Height = btnMuonTra.Height;
             scoll.Top = btnMuonTra.Top;
+            phieuMuon2.BringToFront();
+
+
+
+
         }
 
         private void button7_Click(object sender, EventArgs e)
@@ -80,6 +86,11 @@ namespace BTL_C_
         }
 
         private void ptLogo_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel3_Paint(object sender, PaintEventArgs e)
         {
 
         }
