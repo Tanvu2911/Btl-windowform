@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BTL_C_.UCs;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -41,13 +42,18 @@ namespace BTL_C_
         {
             scoll.Height = btnDocGia.Height;
             scoll.Top = btnDocGia.Top;
-            docGia2.BringToFront();
+            docGia1.BringToFront();
         }
 
         private void button8_Click(object sender, EventArgs e)
         {
             scoll.Height = btnMuonTra.Height;
             scoll.Top = btnMuonTra.Top;
+            phieuMuon2.BringToFront();
+
+
+
+
         }
 
         private void button7_Click(object sender, EventArgs e)
@@ -81,28 +87,38 @@ namespace BTL_C_
 
         private void ptLogo_Click(object sender, EventArgs e)
         {
-            OpenFileDialog dlgOpen = new OpenFileDialog();
-            dlgOpen.Filter = "Bitmap(*.bmp)|*.bmp|gif(*.gif)|*.gif|All files(*.*)|*.*";
-            dlgOpen.InitialDirectory = Application.StartupPath;
-            dlgOpen.FilterIndex = 3;
-            dlgOpen.Title = "Chon hinh anh cho san pham";
 
-            if (dlgOpen.ShowDialog() == DialogResult.OK)
-            {
-                ptLogo.Image = Image.FromFile(dlgOpen.FileName);
-
-                string[] parts = dlgOpen.FileName.Split('\\');
-                image = parts[parts.Length - 1];
-
-                string imagesFolder = Path.Combine(Application.StartupPath, "Images");
-                if (!Directory.Exists(imagesFolder))
-                {
-                    Directory.CreateDirectory(imagesFolder);
-                }
-
-                string destPath = Path.Combine(imagesFolder, image);
-                File.Copy(dlgOpen.FileName, destPath, true);
-            }
         }
+
+        private void panel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        //private void ptLogo_Click(object sender, EventArgs e)
+        //{
+        //    OpenFileDialog dlgOpen = new OpenFileDialog();
+        //    dlgOpen.Filter = "Bitmap(*.bmp)|*.bmp|gif(*.gif)|*.gif|All files(*.*)|*.*";
+        //    dlgOpen.InitialDirectory = Application.StartupPath;
+        //    dlgOpen.FilterIndex = 3;
+        //    dlgOpen.Title = "Chon hinh anh cho san pham";
+
+        //    if (dlgOpen.ShowDialog() == DialogResult.OK)
+        //    {
+        //        ptLogo.Image = Image.FromFile(dlgOpen.FileName);
+
+        //        string[] parts = dlgOpen.FileName.Split('\\');
+        //        image = parts[parts.Length - 1];
+
+        //        string imagesFolder = Path.Combine(Application.StartupPath, "Images");
+        //        if (!Directory.Exists(imagesFolder))
+        //        {
+        //            Directory.CreateDirectory(imagesFolder);
+        //        }
+
+        //        string destPath = Path.Combine(imagesFolder, image);
+        //        File.Copy(dlgOpen.FileName, destPath, true);
+        //    }
+        //}
     }
 }
