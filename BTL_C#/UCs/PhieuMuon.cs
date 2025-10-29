@@ -366,51 +366,136 @@ namespace BTL_C_.UCs
         //Vũ Tân
         private void btnInPhieu_Click(object sender, EventArgs e)
         {
+            //try
+            //{
+            //    // 🔹 Thư mục lưu file PDF trong ổ D
+            //    string folderPath = @"D:\PDF";
+
+            //    // Nếu thư mục chưa tồn tại thì tạo mới
+            //    if (!Directory.Exists(folderPath))
+            //    {
+            //        Directory.CreateDirectory(folderPath);
+            //    }
+
+            //    // 🔹 Tạo tên file PDF (thêm ngày giờ để tránh trùng)
+            //    string fileName = $"PhieuMuon_{DateTime.Now:yyyyMMdd_HHmmss}.pdf";
+            //    string filePath = Path.Combine(folderPath, fileName);
+
+            //    // 🔹 Khởi tạo file PDF
+            //    Document doc = new Document(PageSize.A4, 50, 50, 50, 50);
+            //    PdfWriter.GetInstance(doc, new FileStream(filePath, FileMode.Create));
+            //    doc.Open();
+
+            //    // 🔹 Tiêu đề phiếu
+            //    var titleFont = FontFactory.GetFont("Arial", 20, iTextSharp.text.Font.BOLD);
+            //    var normalFont = FontFactory.GetFont("Arial", 12);
+
+            //    Paragraph title = new Paragraph("PHIẾU MƯỢN SÁCH", titleFont);
+            //    title.Alignment = Element.ALIGN_CENTER;
+            //    doc.Add(title);
+
+            //    doc.Add(new Paragraph("\n----------------------------------------\n", normalFont));
+
+            //    // 🔹 Nội dung phiếu (có thể thay bằng textbox sau)
+            //    doc.Add(new Paragraph("Tên người mượn: "+ txtHoTen.Text , normalFont));
+            //    doc.Add(new Paragraph("Tên sách:" + dgvSachDangMuon.CurrentRow.Cells[1].Value.ToString(), normalFont));
+            //    doc.Add(new Paragraph("Ngày mượn: " + DateTime.Now.ToShortDateString(), normalFont));
+            //    doc.Add(new Paragraph("Ngày trả dự kiến: " + DateTime.Now.AddDays(7).ToShortDateString(), normalFont));
+            //    //doc.Add(new Paragraph("\nChữ ký người mượn: ____________________", normalFont));
+            //    doc.Add(new Paragraph("Chữ ký thủ thư: Vu Viet Tan", normalFont));
+
+            //    // 🔹 Kết thúc tài liệu
+            //    doc.Close();
+
+            //    MessageBox.Show($"✅ Phiếu mượn đã được lưu tại:\n{filePath}",
+            //                    "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            //    // 🔹 Mở file PDF sau khi xuất
+            //    System.Diagnostics.Process.Start(filePath);
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show("❌ Lỗi khi tạo phiếu: " + ex.Message,
+            //                    "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //}
+
+
             try
             {
                 // 🔹 Thư mục lưu file PDF trong ổ D
                 string folderPath = @"D:\PDF";
-
-                // Nếu thư mục chưa tồn tại thì tạo mới
                 if (!Directory.Exists(folderPath))
                 {
                     Directory.CreateDirectory(folderPath);
                 }
 
-                // 🔹 Tạo tên file PDF (thêm ngày giờ để tránh trùng)
+                // 🔹 Tạo tên file PDF có thời gian
                 string fileName = $"PhieuMuon_{DateTime.Now:yyyyMMdd_HHmmss}.pdf";
                 string filePath = Path.Combine(folderPath, fileName);
 
-                // 🔹 Khởi tạo file PDF
+                // 🔹 Khởi tạo tài liệu PDF
                 Document doc = new Document(PageSize.A4, 50, 50, 50, 50);
                 PdfWriter.GetInstance(doc, new FileStream(filePath, FileMode.Create));
                 doc.Open();
 
-                // 🔹 Tiêu đề phiếu
-                var titleFont = FontFactory.GetFont("Arial", 20, iTextSharp.text.Font.BOLD);
-                var normalFont = FontFactory.GetFont("Arial", 12);
+                // 🔹 Font Unicode (Arial hỗ trợ tiếng Việt)
+                string fontPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Fonts), "arial.ttf");
+                BaseFont bf = BaseFont.CreateFont(fontPath, BaseFont.IDENTITY_H, BaseFont.EMBEDDED);
+                iTextSharp.text.Font titleFont = new iTextSharp.text.Font(bf, 20, iTextSharp.text.Font.BOLD);
+                iTextSharp.text.Font normalFont = new iTextSharp.text.Font(bf, 12, iTextSharp.text.Font.NORMAL);
+                iTextSharp.text.Font tableHeaderFont = new iTextSharp.text.Font(bf, 12, iTextSharp.text.Font.BOLD);
 
+                // 🔹 Tiêu đề phiếu
                 Paragraph title = new Paragraph("PHIẾU MƯỢN SÁCH", titleFont);
                 title.Alignment = Element.ALIGN_CENTER;
                 doc.Add(title);
+                doc.Add(new Paragraph("\n---------------------------------------------\n", normalFont));
 
-                doc.Add(new Paragraph("\n----------------------------------------\n", normalFont));
+                // 🔹 Thông tin người mượn
+                string tenNguoiMuon = string.IsNullOrWhiteSpace(txtHoTen.Text) ? "Không rõ" : txtHoTen.Text;
+                doc.Add(new Paragraph($"Tên người mượn: {tenNguoiMuon}", normalFont));
+                doc.Add(new Paragraph($"Ngày mượn: {DateTime.Now:dd/MM/yyyy}", normalFont));
+                doc.Add(new Paragraph($"Ngày trả dự kiến: {DateTime.Now.AddDays(7):dd/MM/yyyy}", normalFont));
+                doc.Add(new Paragraph("\nDanh sách sách đang mượn:", normalFont));
+                doc.Add(new Paragraph("\n"));
 
-                // 🔹 Nội dung phiếu (có thể thay bằng textbox sau)
-                doc.Add(new Paragraph("Tên người mượn: Nguyễn Văn A", normalFont));
-                doc.Add(new Paragraph("Tên sách: Lập trình C# cơ bản", normalFont));
-                doc.Add(new Paragraph("Ngày mượn: " + DateTime.Now.ToShortDateString(), normalFont));
-                doc.Add(new Paragraph("Ngày trả dự kiến: " + DateTime.Now.AddDays(7).ToShortDateString(), normalFont));
-                doc.Add(new Paragraph("\nChữ ký người mượn: ____________________", normalFont));
-                doc.Add(new Paragraph("Chữ ký thủ thư: ____________________", normalFont));
+                // 🔹 Giảm 1 cột để bỏ cột cuối
+                int soCot = dgvSachDangMuon.Columns.Count - 1;
+                PdfPTable table = new PdfPTable(soCot);
+                table.WidthPercentage = 100;
 
-                // 🔹 Kết thúc tài liệu
+                // 🔹 Thêm tiêu đề cột (trừ cột cuối)
+                for (int i = 0; i < soCot; i++)
+                {
+                    PdfPCell cell = new PdfPCell(new Phrase(dgvSachDangMuon.Columns[i].HeaderText, tableHeaderFont));
+                    cell.BackgroundColor = new BaseColor(230, 230, 230);
+                    cell.HorizontalAlignment = Element.ALIGN_CENTER;
+                    table.AddCell(cell);
+                }
+
+                // 🔹 Thêm dữ liệu từng hàng (trừ cột cuối)
+                foreach (DataGridViewRow row in dgvSachDangMuon.Rows)
+                {
+                    if (!row.IsNewRow)
+                    {
+                        for (int i = 0; i < soCot; i++)
+                        {
+                            string cellText = row.Cells[i].Value?.ToString() ?? "";
+                            table.AddCell(new Phrase(cellText, normalFont));
+                        }
+                    }
+                }
+
+                // 🔹 Thêm bảng vào tài liệu
+                doc.Add(table);
+
+                doc.Add(new Paragraph("\nChữ ký thủ thư: ____________________", normalFont));
                 doc.Close();
 
+                // 🔹 Thông báo + mở file PDF
                 MessageBox.Show($"✅ Phiếu mượn đã được lưu tại:\n{filePath}",
                                 "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                // 🔹 Mở file PDF sau khi xuất
                 System.Diagnostics.Process.Start(filePath);
             }
             catch (Exception ex)
@@ -418,9 +503,17 @@ namespace BTL_C_.UCs
                 MessageBox.Show("❌ Lỗi khi tạo phiếu: " + ex.Message,
                                 "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+
+
+
         }
 
         private void dgvSachMuon_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void PhieuMuon_Load(object sender, EventArgs e)
         {
 
         }

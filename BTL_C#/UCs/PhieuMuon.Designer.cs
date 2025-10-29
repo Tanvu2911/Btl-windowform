@@ -66,7 +66,7 @@
             // 
             // btnInPhieu
             // 
-            this.btnInPhieu.Location = new System.Drawing.Point(743, 481);
+            this.btnInPhieu.Location = new System.Drawing.Point(759, 471);
             this.btnInPhieu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnInPhieu.Name = "btnInPhieu";
             this.btnInPhieu.Size = new System.Drawing.Size(89, 29);
@@ -104,7 +104,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(37, 70);
+            this.label2.Location = new System.Drawing.Point(37, 57);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(113, 16);
             this.label2.TabIndex = 4;
@@ -113,7 +113,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(47, 99);
+            this.label3.Location = new System.Drawing.Point(47, 86);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(48, 16);
             this.label3.TabIndex = 5;
@@ -122,7 +122,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(242, 127);
+            this.label4.Location = new System.Drawing.Point(242, 114);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(34, 16);
             this.label4.TabIndex = 6;
@@ -131,7 +131,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(242, 99);
+            this.label5.Location = new System.Drawing.Point(242, 86);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(52, 16);
             this.label5.TabIndex = 7;
@@ -140,7 +140,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(47, 130);
+            this.label6.Location = new System.Drawing.Point(47, 116);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(64, 16);
             this.label6.TabIndex = 8;
@@ -149,7 +149,7 @@
             // txtMaDG
             // 
             this.txtMaDG.Enabled = false;
-            this.txtMaDG.Location = new System.Drawing.Point(117, 96);
+            this.txtMaDG.Location = new System.Drawing.Point(117, 82);
             this.txtMaDG.Name = "txtMaDG";
             this.txtMaDG.Size = new System.Drawing.Size(106, 22);
             this.txtMaDG.TabIndex = 9;
@@ -157,7 +157,7 @@
             // txtDienThoai
             // 
             this.txtDienThoai.Enabled = false;
-            this.txtDienThoai.Location = new System.Drawing.Point(304, 125);
+            this.txtDienThoai.Location = new System.Drawing.Point(304, 111);
             this.txtDienThoai.Name = "txtDienThoai";
             this.txtDienThoai.Size = new System.Drawing.Size(166, 22);
             this.txtDienThoai.TabIndex = 10;
@@ -165,7 +165,7 @@
             // txtHoTen
             // 
             this.txtHoTen.Enabled = false;
-            this.txtHoTen.Location = new System.Drawing.Point(304, 96);
+            this.txtHoTen.Location = new System.Drawing.Point(304, 82);
             this.txtHoTen.Name = "txtHoTen";
             this.txtHoTen.Size = new System.Drawing.Size(166, 22);
             this.txtHoTen.TabIndex = 11;
@@ -174,7 +174,7 @@
             // 
             this.dtpNgaySinh.Enabled = false;
             this.dtpNgaySinh.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpNgaySinh.Location = new System.Drawing.Point(117, 125);
+            this.dtpNgaySinh.Location = new System.Drawing.Point(117, 111);
             this.dtpNgaySinh.Name = "dtpNgaySinh";
             this.dtpNgaySinh.Size = new System.Drawing.Size(106, 22);
             this.dtpNgaySinh.TabIndex = 12;
@@ -191,7 +191,7 @@
             // 
             // btnThemSach
             // 
-            this.btnThemSach.Location = new System.Drawing.Point(498, 339);
+            this.btnThemSach.Location = new System.Drawing.Point(504, 320);
             this.btnThemSach.Name = "btnThemSach";
             this.btnThemSach.Size = new System.Drawing.Size(87, 23);
             this.btnThemSach.TabIndex = 14;
@@ -201,7 +201,7 @@
             // 
             // btnXoaSach
             // 
-            this.btnXoaSach.Location = new System.Drawing.Point(148, 481);
+            this.btnXoaSach.Location = new System.Drawing.Point(148, 477);
             this.btnXoaSach.Name = "btnXoaSach";
             this.btnXoaSach.Size = new System.Drawing.Size(75, 23);
             this.btnXoaSach.TabIndex = 15;
@@ -211,9 +211,9 @@
             // 
             // btnLamMoi
             // 
-            this.btnLamMoi.Location = new System.Drawing.Point(556, 484);
+            this.btnLamMoi.Location = new System.Drawing.Point(658, 472);
             this.btnLamMoi.Name = "btnLamMoi";
-            this.btnLamMoi.Size = new System.Drawing.Size(75, 23);
+            this.btnLamMoi.Size = new System.Drawing.Size(85, 28);
             this.btnLamMoi.TabIndex = 16;
             this.btnLamMoi.Text = "Làm mới";
             this.btnLamMoi.UseVisualStyleBackColor = true;
@@ -231,7 +231,7 @@
             // 
             // txtTimSach
             // 
-            this.txtTimSach.Location = new System.Drawing.Point(496, 127);
+            this.txtTimSach.Location = new System.Drawing.Point(496, 114);
             this.txtTimSach.Name = "txtTimSach";
             this.txtTimSach.Size = new System.Drawing.Size(216, 22);
             this.txtTimSach.TabIndex = 18;
@@ -239,7 +239,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(493, 96);
+            this.label7.Location = new System.Drawing.Point(493, 82);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(120, 16);
             this.label7.TabIndex = 17;
@@ -257,7 +257,7 @@
             // 
             // btnMuonSach
             // 
-            this.btnMuonSach.Location = new System.Drawing.Point(36, 481);
+            this.btnMuonSach.Location = new System.Drawing.Point(46, 477);
             this.btnMuonSach.Name = "btnMuonSach";
             this.btnMuonSach.Size = new System.Drawing.Size(87, 23);
             this.btnMuonSach.TabIndex = 21;
@@ -267,7 +267,7 @@
             // 
             // btnTraSach
             // 
-            this.btnTraSach.Location = new System.Drawing.Point(40, 333);
+            this.btnTraSach.Location = new System.Drawing.Point(46, 314);
             this.btnTraSach.Name = "btnTraSach";
             this.btnTraSach.Size = new System.Drawing.Size(106, 23);
             this.btnTraSach.TabIndex = 22;
@@ -289,7 +289,7 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.dgvSachDangMuon);
-            this.groupBox1.Location = new System.Drawing.Point(36, 153);
+            this.groupBox1.Location = new System.Drawing.Point(36, 139);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(446, 174);
             this.groupBox1.TabIndex = 25;
@@ -299,7 +299,7 @@
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.dgvSachKhaDung);
-            this.groupBox2.Location = new System.Drawing.Point(498, 153);
+            this.groupBox2.Location = new System.Drawing.Point(498, 139);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(429, 174);
             this.groupBox2.TabIndex = 26;
@@ -309,7 +309,7 @@
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.dgvSachMuon);
-            this.groupBox3.Location = new System.Drawing.Point(36, 362);
+            this.groupBox3.Location = new System.Drawing.Point(42, 342);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(446, 113);
             this.groupBox3.TabIndex = 27;
@@ -346,7 +346,8 @@
             this.Controls.Add(this.btnInPhieu);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "PhieuMuon";
-            this.Size = new System.Drawing.Size(941, 530);
+            this.Size = new System.Drawing.Size(947, 513);
+            this.Load += new System.EventHandler(this.PhieuMuon_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvSachDangMuon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSachKhaDung)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSachMuon)).EndInit();
