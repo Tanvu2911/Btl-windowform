@@ -17,7 +17,7 @@ namespace BTL_C_.UCs
             InitializeComponent();
             KhoiTaoBangTam();
         }
-
+        private int quaHan;
         private DataProcesser db = new DataProcesser();
         private DataTable dtSachMuon = new DataTable(); // Bảng tạm sách mượn
         private string maDocGiaHienTai = "";
@@ -51,7 +51,7 @@ namespace BTL_C_.UCs
                 if (int.TryParse(keyword, out _))
                 {
                     // Tìm theo MÃ ĐỘC GIẢ (chính xác)
-                    sql = $"SELECT MaDG, HoTen, DienThoai, NgaySinh FROM DocGia WHERE MaDG = '{keyword}'";
+                    sql = $"SELECT MaDG, HoTen, DienThoai, NgaySinh FROM DocGia WHERE MaDG = '{keyword}' OR DienThoai LIKE '{keyword}'";
                 }
                 else
                 {
@@ -170,11 +170,15 @@ namespace BTL_C_.UCs
                 maPhieuHienTai = dt.Rows.Count > 0
                     ? Convert.ToInt32(dt.Rows[0]["MaPhieu"])
                     : -1;
-                int quaHan = dt.AsEnumerable().Count(r => r.Field<string>("TrangThaiHan") == "Quá hạn");
+                quaHan = dt.AsEnumerable().Count(r => r.Field<string>("TrangThaiHan") == "Quá hạn");
                 if (quaHan > 0)
                 {
                     MessageBox.Show($"Cảnh báo: Có {quaHan} sách quá hạn!", "Quá hạn",
                                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    btnMuonSach.Enabled = false;
+                } else
+                {
+                    btnMuonSach.Enabled = true;
                 }
             }
             catch (Exception ex)
