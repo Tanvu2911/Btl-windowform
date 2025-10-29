@@ -11,7 +11,7 @@ namespace BTL_C_.Classes
     internal class DataProcesser
     {
 
-        string strconnection = "Data source=CUTỄUGAMING\\SQLEXPRESS;Database=QLThuVien;Integrated Security=True";
+        string strconnection = "Data source=.\\SQLEXPRESS;Database=QLThuVien;Integrated Security=True";
         SqlConnection SqlConnection = null;
         public void KetNoiCSDL()
         {
@@ -53,6 +53,26 @@ namespace BTL_C_.Classes
             SqlCommand cmd = new SqlCommand(sql, SqlConnection);
             cmd.ExecuteNonQuery();
             DongKetNoiCSDL();
+        }
+
+        public object ExecuteScalar(string sql)
+        {
+            object result = null;
+            try
+            {
+                KetNoiCSDL();
+                SqlCommand cmd = new SqlCommand(sql, SqlConnection);
+                result = cmd.ExecuteScalar();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Lỗi ExecuteScalar: " + ex.Message);
+            }
+            finally
+            {
+                DongKetNoiCSDL();
+            }
+            return result;
         }
     }
 }

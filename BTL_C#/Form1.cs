@@ -66,7 +66,7 @@ namespace BTL_C_
 
                     
 
-                    MessageBox.Show("Đăng nhập thành công!");
+                    //MessageBox.Show("Đăng nhập thành công!");
 
                     string sqlareas = "SELECT Role FROM dbo.Users WHERE UserName = N'" + tbUserName.Text + "'";
                     DataTable dtAreas = dtbase.DocBang(sqlareas);
