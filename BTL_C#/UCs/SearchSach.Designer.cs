@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btSach = new System.Windows.Forms.Button();
             this.btTheLoai = new System.Windows.Forms.Button();
             this.gbTimKiem = new System.Windows.Forms.GroupBox();
@@ -41,6 +41,7 @@
             this.tbTim = new System.Windows.Forms.TextBox();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.dgvSach = new System.Windows.Forms.DataGridView();
+            this.btnExcel = new System.Windows.Forms.Button();
             this.gbTimKiem.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSach)).BeginInit();
             this.SuspendLayout();
@@ -50,7 +51,7 @@
             this.btSach.BackColor = System.Drawing.Color.PeachPuff;
             this.btSach.Location = new System.Drawing.Point(63, 39);
             this.btSach.Name = "btSach";
-            this.btSach.Size = new System.Drawing.Size(122, 39);
+            this.btSach.Size = new System.Drawing.Size(180, 59);
             this.btSach.TabIndex = 1;
             this.btSach.Text = "Sách";
             this.btSach.UseVisualStyleBackColor = false;
@@ -59,9 +60,9 @@
             // btTheLoai
             // 
             this.btTheLoai.BackColor = System.Drawing.Color.PeachPuff;
-            this.btTheLoai.Location = new System.Drawing.Point(201, 39);
+            this.btTheLoai.Location = new System.Drawing.Point(301, 39);
             this.btTheLoai.Name = "btTheLoai";
-            this.btTheLoai.Size = new System.Drawing.Size(122, 39);
+            this.btTheLoai.Size = new System.Drawing.Size(174, 59);
             this.btTheLoai.TabIndex = 2;
             this.btTheLoai.Text = "Thể loại";
             this.btTheLoai.UseVisualStyleBackColor = false;
@@ -155,14 +156,14 @@
             this.dgvSach.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvSach.BackgroundColor = System.Drawing.Color.MintCream;
             this.dgvSach.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.SandyBrown;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvSach.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.SandyBrown;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvSach.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvSach.Location = new System.Drawing.Point(66, 279);
             this.dgvSach.Name = "dgvSach";
             this.dgvSach.RowHeadersWidth = 62;
@@ -170,17 +171,29 @@
             this.dgvSach.Size = new System.Drawing.Size(908, 298);
             this.dgvSach.TabIndex = 0;
             // 
+            // btnExcel
+            // 
+            this.btnExcel.BackColor = System.Drawing.Color.PeachPuff;
+            this.btnExcel.Location = new System.Drawing.Point(66, 583);
+            this.btnExcel.Name = "btnExcel";
+            this.btnExcel.Size = new System.Drawing.Size(257, 60);
+            this.btnExcel.TabIndex = 6;
+            this.btnExcel.Text = "Xuất Excel";
+            this.btnExcel.UseVisualStyleBackColor = false;
+            this.btnExcel.Click += new System.EventHandler(this.btnExcel_Click);
+            // 
             // SearchSach
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.Controls.Add(this.btnExcel);
             this.Controls.Add(this.gbTimKiem);
             this.Controls.Add(this.btTheLoai);
             this.Controls.Add(this.btSach);
             this.Controls.Add(this.dgvSach);
             this.Name = "SearchSach";
-            this.Size = new System.Drawing.Size(1039, 601);
+            this.Size = new System.Drawing.Size(1039, 659);
             this.Load += new System.EventHandler(this.SearchSach_Load);
             this.gbTimKiem.ResumeLayout(false);
             this.gbTimKiem.PerformLayout();
@@ -201,5 +214,6 @@
         private System.Windows.Forms.DataGridView dgvSach;
         private System.Windows.Forms.ComboBox cb1;
         private System.Windows.Forms.Button btnReset;
+        private System.Windows.Forms.Button btnExcel;
     }
 }

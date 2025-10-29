@@ -41,12 +41,12 @@ namespace BTL_C_
             this.btnThongKe = new System.Windows.Forms.Button();
             this.btnSach = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.docGia1 = new BTL_C_.UCs.DocGia();
-            this.searchSach1 = new BTL_C_.SearchSach();
             this.panel3 = new System.Windows.Forms.Panel();
             this.ptAvartar = new System.Windows.Forms.PictureBox();
             this.lbTen = new System.Windows.Forms.Label();
             this.ptLogo = new System.Windows.Forms.PictureBox();
+            this.searchSach1 = new BTL_C_.SearchSach();
+            this.docGia1 = new BTL_C_.UCs.DocGia();
             this.phieuMuon2 = new BTL_C_.UCs.PhieuMuon();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -206,24 +206,6 @@ namespace BTL_C_
             this.panel2.Size = new System.Drawing.Size(1009, 660);
             this.panel2.TabIndex = 1;
             // 
-            // docGia1
-            // 
-            this.docGia1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.docGia1.Location = new System.Drawing.Point(0, 0);
-            this.docGia1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.docGia1.Name = "docGia1";
-            this.docGia1.Size = new System.Drawing.Size(1009, 660);
-            this.docGia1.TabIndex = 1;
-            // 
-            // searchSach1
-            // 
-            this.searchSach1.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.searchSach1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.searchSach1.Location = new System.Drawing.Point(0, 0);
-            this.searchSach1.Name = "searchSach1";
-            this.searchSach1.Size = new System.Drawing.Size(1009, 660);
-            this.searchSach1.TabIndex = 0;
-            // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.Bisque;
@@ -266,12 +248,31 @@ namespace BTL_C_
             this.ptLogo.TabStop = false;
             this.ptLogo.Click += new System.EventHandler(this.ptLogo_Click);
             // 
+            // searchSach1
+            // 
+            this.searchSach1.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.searchSach1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.searchSach1.Location = new System.Drawing.Point(0, 0);
+            this.searchSach1.Name = "searchSach1";
+            this.searchSach1.Size = new System.Drawing.Size(1009, 660);
+            this.searchSach1.TabIndex = 0;
+            // 
+            // docGia1
+            // 
+            this.docGia1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.docGia1.Location = new System.Drawing.Point(0, 0);
+            this.docGia1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.docGia1.Name = "docGia1";
+            this.docGia1.Size = new System.Drawing.Size(1009, 660);
+            this.docGia1.TabIndex = 1;
+            // 
             // phieuMuon2
             // 
             this.phieuMuon2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.phieuMuon2.Location = new System.Drawing.Point(0, 0);
+            this.phieuMuon2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.phieuMuon2.Name = "phieuMuon2";
-            this.phieuMuon2.Size = new System.Drawing.Size(1009, 660);
+            this.phieuMuon2.Size = new System.Drawing.Size(1514, 990);
             this.phieuMuon2.TabIndex = 2;
             // 
             // QLThuVien
@@ -315,9 +316,9 @@ namespace BTL_C_
         private System.Windows.Forms.PictureBox ptAvartar;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox ptLogo;
-        private DocGia docGia1;
         private SearchSach searchSach1;
         private PhieuMuon PhieuMuon1;
         private PhieuMuon phieuMuon2;
+        private DocGia docGia1;
     }
 }

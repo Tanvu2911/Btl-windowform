@@ -52,6 +52,7 @@
             this.btnThem = new System.Windows.Forms.Button();
             this.dtNgayNhap = new System.Windows.Forms.DateTimePicker();
             this.label8 = new System.Windows.Forms.Label();
+            this.btnReset = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.ptAnh)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSach)).BeginInit();
@@ -75,9 +76,9 @@
             // 
             // btnTim
             // 
-            this.btnTim.Location = new System.Drawing.Point(527, 471);
+            this.btnTim.Location = new System.Drawing.Point(452, 471);
             this.btnTim.Name = "btnTim";
-            this.btnTim.Size = new System.Drawing.Size(116, 45);
+            this.btnTim.Size = new System.Drawing.Size(84, 45);
             this.btnTim.TabIndex = 39;
             this.btnTim.Text = "Tìm";
             this.btnTim.UseVisualStyleBackColor = true;
@@ -85,9 +86,9 @@
             // 
             // btnLuu
             // 
-            this.btnLuu.Location = new System.Drawing.Point(393, 471);
+            this.btnLuu.Location = new System.Drawing.Point(329, 471);
             this.btnLuu.Name = "btnLuu";
-            this.btnLuu.Size = new System.Drawing.Size(116, 45);
+            this.btnLuu.Size = new System.Drawing.Size(92, 45);
             this.btnLuu.TabIndex = 38;
             this.btnLuu.Text = "Lưu";
             this.btnLuu.UseVisualStyleBackColor = true;
@@ -221,13 +222,13 @@
             this.dgvSach.Size = new System.Drawing.Size(625, 431);
             this.dgvSach.TabIndex = 0;
             this.dgvSach.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSach_CellClick);
-            this.dgvSach.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSach_CellContentClick);
+            //this.dgvSach.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSach_CellContentClick);
             // 
             // btnXoa
             // 
-            this.btnXoa.Location = new System.Drawing.Point(262, 471);
+            this.btnXoa.Location = new System.Drawing.Point(220, 471);
             this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(116, 45);
+            this.btnXoa.Size = new System.Drawing.Size(90, 45);
             this.btnXoa.TabIndex = 23;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.UseVisualStyleBackColor = true;
@@ -235,9 +236,9 @@
             // 
             // btnSua
             // 
-            this.btnSua.Location = new System.Drawing.Point(140, 471);
+            this.btnSua.Location = new System.Drawing.Point(113, 471);
             this.btnSua.Name = "btnSua";
-            this.btnSua.Size = new System.Drawing.Size(116, 45);
+            this.btnSua.Size = new System.Drawing.Size(88, 45);
             this.btnSua.TabIndex = 22;
             this.btnSua.Text = "Sửa";
             this.btnSua.UseVisualStyleBackColor = true;
@@ -247,7 +248,7 @@
             // 
             this.btnThem.Location = new System.Drawing.Point(18, 471);
             this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(116, 45);
+            this.btnThem.Size = new System.Drawing.Size(80, 45);
             this.btnThem.TabIndex = 21;
             this.btnThem.Text = "Thêm";
             this.btnThem.UseVisualStyleBackColor = true;
@@ -269,10 +270,21 @@
             this.label8.TabIndex = 43;
             this.label8.Text = "Ngày Nhập";
             // 
+            // btnReset
+            // 
+            this.btnReset.Location = new System.Drawing.Point(559, 471);
+            this.btnReset.Name = "btnReset";
+            this.btnReset.Size = new System.Drawing.Size(84, 45);
+            this.btnReset.TabIndex = 44;
+            this.btnReset.Text = "Reset";
+            this.btnReset.UseVisualStyleBackColor = true;
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
+            // 
             // QLSach
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.btnReset);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.dtNgayNhap);
             this.Controls.Add(this.label7);
@@ -333,5 +345,6 @@
         private System.Windows.Forms.Button btnThem;
         private System.Windows.Forms.DateTimePicker dtNgayNhap;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Button btnReset;
     }
 }

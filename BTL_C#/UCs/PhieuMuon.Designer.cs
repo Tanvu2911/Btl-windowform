@@ -231,7 +231,7 @@
             // 
             // btnTimSach
             // 
-            this.btnTimSach.Location = new System.Drawing.Point(826, 159);
+            this.btnTimSach.Location = new System.Drawing.Point(843, 145);
             this.btnTimSach.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnTimSach.Name = "btnTimSach";
             this.btnTimSach.Size = new System.Drawing.Size(84, 29);
