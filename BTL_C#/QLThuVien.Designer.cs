@@ -41,13 +41,13 @@ namespace BTL_C_
             this.btnThongKe = new System.Windows.Forms.Button();
             this.btnSach = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.phieuMuon2 = new BTL_C_.UCs.PhieuMuon();
+            this.docGia1 = new BTL_C_.UCs.DocGia();
+            this.searchSach1 = new BTL_C_.SearchSach();
             this.panel3 = new System.Windows.Forms.Panel();
             this.ptAvartar = new System.Windows.Forms.PictureBox();
             this.lbTen = new System.Windows.Forms.Label();
             this.ptLogo = new System.Windows.Forms.PictureBox();
-            this.searchSach1 = new BTL_C_.SearchSach();
-            this.docGia1 = new BTL_C_.UCs.DocGia();
-            this.phieuMuon2 = new BTL_C_.UCs.PhieuMuon();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -57,7 +57,7 @@ namespace BTL_C_
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.PeachPuff;
+            this.panel1.BackColor = System.Drawing.Color.Teal;
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.btnTaiKhoan);
             this.panel1.Controls.Add(this.btnLogOut);
@@ -78,6 +78,7 @@ namespace BTL_C_
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label1.Location = new System.Drawing.Point(29, 35);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(120, 29);
@@ -86,11 +87,11 @@ namespace BTL_C_
             // 
             // btnTaiKhoan
             // 
-            this.btnTaiKhoan.BackColor = System.Drawing.Color.PeachPuff;
+            this.btnTaiKhoan.BackColor = System.Drawing.Color.Teal;
             this.btnTaiKhoan.FlatAppearance.BorderSize = 0;
             this.btnTaiKhoan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTaiKhoan.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnTaiKhoan.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnTaiKhoan.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnTaiKhoan.Location = new System.Drawing.Point(12, 414);
             this.btnTaiKhoan.Name = "btnTaiKhoan";
             this.btnTaiKhoan.Size = new System.Drawing.Size(175, 49);
@@ -101,10 +102,11 @@ namespace BTL_C_
             // 
             // btnLogOut
             // 
-            this.btnLogOut.BackColor = System.Drawing.Color.PeachPuff;
+            this.btnLogOut.BackColor = System.Drawing.Color.Teal;
             this.btnLogOut.FlatAppearance.BorderSize = 0;
             this.btnLogOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnLogOut.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnLogOut.Location = new System.Drawing.Point(-3, 675);
             this.btnLogOut.Name = "btnLogOut";
             this.btnLogOut.Size = new System.Drawing.Size(188, 73);
@@ -115,7 +117,7 @@ namespace BTL_C_
             // 
             // scoll
             // 
-            this.scoll.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.scoll.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.scoll.Location = new System.Drawing.Point(3, 139);
             this.scoll.Name = "scoll";
             this.scoll.Size = new System.Drawing.Size(10, 49);
@@ -123,11 +125,11 @@ namespace BTL_C_
             // 
             // btnDocGia
             // 
-            this.btnDocGia.BackColor = System.Drawing.Color.PeachPuff;
+            this.btnDocGia.BackColor = System.Drawing.Color.Teal;
             this.btnDocGia.FlatAppearance.BorderSize = 0;
             this.btnDocGia.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDocGia.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnDocGia.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnDocGia.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnDocGia.Location = new System.Drawing.Point(3, 194);
             this.btnDocGia.Name = "btnDocGia";
             this.btnDocGia.Size = new System.Drawing.Size(184, 49);
@@ -138,11 +140,11 @@ namespace BTL_C_
             // 
             // btnMuonTra
             // 
-            this.btnMuonTra.BackColor = System.Drawing.Color.PeachPuff;
+            this.btnMuonTra.BackColor = System.Drawing.Color.Teal;
             this.btnMuonTra.FlatAppearance.BorderSize = 0;
             this.btnMuonTra.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMuonTra.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnMuonTra.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnMuonTra.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnMuonTra.Location = new System.Drawing.Point(3, 249);
             this.btnMuonTra.Name = "btnMuonTra";
             this.btnMuonTra.Size = new System.Drawing.Size(184, 49);
@@ -153,11 +155,11 @@ namespace BTL_C_
             // 
             // btnNhanVien
             // 
-            this.btnNhanVien.BackColor = System.Drawing.Color.PeachPuff;
+            this.btnNhanVien.BackColor = System.Drawing.Color.Teal;
             this.btnNhanVien.FlatAppearance.BorderSize = 0;
             this.btnNhanVien.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNhanVien.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnNhanVien.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnNhanVien.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnNhanVien.Location = new System.Drawing.Point(3, 304);
             this.btnNhanVien.Name = "btnNhanVien";
             this.btnNhanVien.Size = new System.Drawing.Size(184, 49);
@@ -168,11 +170,11 @@ namespace BTL_C_
             // 
             // btnThongKe
             // 
-            this.btnThongKe.BackColor = System.Drawing.Color.PeachPuff;
+            this.btnThongKe.BackColor = System.Drawing.Color.Teal;
             this.btnThongKe.FlatAppearance.BorderSize = 0;
             this.btnThongKe.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnThongKe.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnThongKe.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnThongKe.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnThongKe.Location = new System.Drawing.Point(0, 359);
             this.btnThongKe.Name = "btnThongKe";
             this.btnThongKe.Size = new System.Drawing.Size(184, 49);
@@ -183,11 +185,11 @@ namespace BTL_C_
             // 
             // btnSach
             // 
-            this.btnSach.BackColor = System.Drawing.Color.PeachPuff;
+            this.btnSach.BackColor = System.Drawing.Color.Teal;
             this.btnSach.FlatAppearance.BorderSize = 0;
             this.btnSach.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSach.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnSach.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnSach.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnSach.Location = new System.Drawing.Point(3, 139);
             this.btnSach.Name = "btnSach";
             this.btnSach.Size = new System.Drawing.Size(184, 49);
@@ -206,9 +208,36 @@ namespace BTL_C_
             this.panel2.Size = new System.Drawing.Size(1009, 660);
             this.panel2.TabIndex = 1;
             // 
+            // phieuMuon2
+            // 
+            this.phieuMuon2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.phieuMuon2.Location = new System.Drawing.Point(0, 0);
+            this.phieuMuon2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.phieuMuon2.Name = "phieuMuon2";
+            this.phieuMuon2.Size = new System.Drawing.Size(1009, 660);
+            this.phieuMuon2.TabIndex = 2;
+            // 
+            // docGia1
+            // 
+            this.docGia1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.docGia1.Location = new System.Drawing.Point(0, 0);
+            this.docGia1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.docGia1.Name = "docGia1";
+            this.docGia1.Size = new System.Drawing.Size(1009, 660);
+            this.docGia1.TabIndex = 1;
+            // 
+            // searchSach1
+            // 
+            this.searchSach1.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.searchSach1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.searchSach1.Location = new System.Drawing.Point(0, 0);
+            this.searchSach1.Name = "searchSach1";
+            this.searchSach1.Size = new System.Drawing.Size(1009, 660);
+            this.searchSach1.TabIndex = 0;
+            // 
             // panel3
             // 
-            this.panel3.BackColor = System.Drawing.Color.Bisque;
+            this.panel3.BackColor = System.Drawing.Color.DarkSlateGray;
             this.panel3.Controls.Add(this.ptAvartar);
             this.panel3.Controls.Add(this.lbTen);
             this.panel3.Controls.Add(this.ptLogo);
@@ -231,6 +260,7 @@ namespace BTL_C_
             // 
             this.lbTen.AutoSize = true;
             this.lbTen.Font = new System.Drawing.Font("Lucida Console", 10F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTen.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.lbTen.Location = new System.Drawing.Point(707, 35);
             this.lbTen.Name = "lbTen";
             this.lbTen.Size = new System.Drawing.Size(129, 20);
@@ -247,33 +277,6 @@ namespace BTL_C_
             this.ptLogo.TabIndex = 9;
             this.ptLogo.TabStop = false;
             this.ptLogo.Click += new System.EventHandler(this.ptLogo_Click);
-            // 
-            // searchSach1
-            // 
-            this.searchSach1.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.searchSach1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.searchSach1.Location = new System.Drawing.Point(0, 0);
-            this.searchSach1.Name = "searchSach1";
-            this.searchSach1.Size = new System.Drawing.Size(1009, 660);
-            this.searchSach1.TabIndex = 0;
-            // 
-            // docGia1
-            // 
-            this.docGia1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.docGia1.Location = new System.Drawing.Point(0, 0);
-            this.docGia1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.docGia1.Name = "docGia1";
-            this.docGia1.Size = new System.Drawing.Size(1009, 660);
-            this.docGia1.TabIndex = 1;
-            // 
-            // phieuMuon2
-            // 
-            this.phieuMuon2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.phieuMuon2.Location = new System.Drawing.Point(0, 0);
-            this.phieuMuon2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.phieuMuon2.Name = "phieuMuon2";
-            this.phieuMuon2.Size = new System.Drawing.Size(1514, 990);
-            this.phieuMuon2.TabIndex = 2;
             // 
             // QLThuVien
             // 

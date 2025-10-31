@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btSach = new System.Windows.Forms.Button();
             this.btTheLoai = new System.Windows.Forms.Button();
             this.gbTimKiem = new System.Windows.Forms.GroupBox();
@@ -48,7 +48,8 @@
             // 
             // btSach
             // 
-            this.btSach.BackColor = System.Drawing.Color.PeachPuff;
+            this.btSach.BackColor = System.Drawing.Color.Teal;
+            this.btSach.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btSach.Location = new System.Drawing.Point(63, 39);
             this.btSach.Name = "btSach";
             this.btSach.Size = new System.Drawing.Size(180, 59);
@@ -59,7 +60,8 @@
             // 
             // btTheLoai
             // 
-            this.btTheLoai.BackColor = System.Drawing.Color.PeachPuff;
+            this.btTheLoai.BackColor = System.Drawing.Color.DarkCyan;
+            this.btTheLoai.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btTheLoai.Location = new System.Drawing.Point(301, 39);
             this.btTheLoai.Name = "btTheLoai";
             this.btTheLoai.Size = new System.Drawing.Size(174, 59);
@@ -70,16 +72,17 @@
             // 
             // gbTimKiem
             // 
-            this.gbTimKiem.BackColor = System.Drawing.Color.Wheat;
+            this.gbTimKiem.BackColor = System.Drawing.Color.Teal;
             this.gbTimKiem.Controls.Add(this.btnReset);
             this.gbTimKiem.Controls.Add(this.cb1);
             this.gbTimKiem.Controls.Add(this.rbtTacGia);
             this.gbTimKiem.Controls.Add(this.rbtNhaXuatBan);
             this.gbTimKiem.Controls.Add(this.rbtTenSach);
             this.gbTimKiem.Controls.Add(this.tbTim);
+            this.gbTimKiem.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.gbTimKiem.Location = new System.Drawing.Point(66, 117);
             this.gbTimKiem.Name = "gbTimKiem";
-            this.gbTimKiem.Size = new System.Drawing.Size(908, 136);
+            this.gbTimKiem.Size = new System.Drawing.Size(908, 135);
             this.gbTimKiem.TabIndex = 5;
             this.gbTimKiem.TabStop = false;
             this.gbTimKiem.Text = "Tìm kiếm";
@@ -156,14 +159,14 @@
             this.dgvSach.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvSach.BackgroundColor = System.Drawing.Color.MintCream;
             this.dgvSach.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.SandyBrown;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvSach.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Teal;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvSach.DefaultCellStyle = dataGridViewCellStyle1;
             this.dgvSach.Location = new System.Drawing.Point(66, 279);
             this.dgvSach.Name = "dgvSach";
             this.dgvSach.RowHeadersWidth = 62;
@@ -173,7 +176,8 @@
             // 
             // btnExcel
             // 
-            this.btnExcel.BackColor = System.Drawing.Color.PeachPuff;
+            this.btnExcel.BackColor = System.Drawing.Color.Teal;
+            this.btnExcel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnExcel.Location = new System.Drawing.Point(66, 583);
             this.btnExcel.Name = "btnExcel";
             this.btnExcel.Size = new System.Drawing.Size(257, 60);
