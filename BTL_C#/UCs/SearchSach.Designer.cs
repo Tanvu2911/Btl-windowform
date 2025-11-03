@@ -89,6 +89,7 @@
             // 
             // btnReset
             // 
+            this.btnReset.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnReset.Location = new System.Drawing.Point(732, 51);
             this.btnReset.Name = "btnReset";
             this.btnReset.Size = new System.Drawing.Size(97, 31);

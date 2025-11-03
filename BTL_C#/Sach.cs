@@ -24,26 +24,21 @@ namespace BTL_C_
 
         private void Sach_Load(object sender, EventArgs e)
         {
-            // Load thể loại
             DataTable dtTheLoai = dtbase.DocBang("SELECT * FROM TheLoai");
             ft.FillCombobox(cb1, dtTheLoai, "TenTheLoai", "MaTheLoai");
             cb1.SelectedIndex = -1;
 
-            // Load sách
             LoadDataToGrid();
 
-            // Màu chữ đen
             dgvSach.DefaultCellStyle.ForeColor = Color.Black;
         }
 
-        // Tải dữ liệu vào DataGridView
         private void LoadDataToGrid()
         {
             DataTable dt = dtbase.DocBang("SELECT * FROM Sach");
             dgvSach.DataSource = dt;
         }
 
-        // Lấy tên ảnh hiện tại từ CSDL
         private string GetCurrentImage(string maSach)
         {
             string query = $"SELECT Anh FROM Sach WHERE MaSach = N'{maSach}'";
@@ -66,18 +61,15 @@ namespace BTL_C_
             tbNamXuatBan.Text = row.Cells[4].Value?.ToString() ?? "";
             tbSoLuong.Text = row.Cells[6].Value?.ToString() ?? "";
 
-            // Thể loại
             object maTL = row.Cells[5].Value;
             cb1.SelectedValue = (maTL != null && maTL != DBNull.Value) ? maTL.ToString() : (object)-1;
 
-            // Ngày nhập
             object ngayNhapObj = row.Cells[7].Value;
             if (ngayNhapObj != null && DateTime.TryParse(ngayNhapObj.ToString(), out DateTime ngayNhap))
                 dtNgayNhap.Value = ngayNhap;
             else
                 dtNgayNhap.Value = DateTime.Now;
 
-            // Hiển thị ảnh
             string tenAnh = row.Cells[8].Value?.ToString();
             try
             {
@@ -99,7 +91,6 @@ namespace BTL_C_
                 ptAnh.Image = null;
             }
 
-            // Bật nút
             btnSua.Enabled = true;
             btnXoa.Enabled = true;
             btnLuu.Enabled = false;
@@ -163,28 +154,78 @@ namespace BTL_C_
 
         private void btnTim_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(tbMaSach.Text))
+            //if (string.IsNullOrWhiteSpace(tbMaSach.Text))
+            //{
+            //    MessageBox.Show("Vui lòng nhập mã sách cần tìm.");
+            //    return;
+            //}
+
+            //DataTable dt = dtbase.DocBang($"SELECT * FROM Sach WHERE MaSach = N'{tbMaSach.Text}'");
+            //if (dt.Rows.Count > 0)
+            //{
+            //    dgvSach.DataSource = dt;
+            //}
+            //else
+            //{
+            //    MessageBox.Show("Không tìm thấy sách.");
+            //    LoadDataToGrid();
+            //    resetall();
+            //}
+
+
+            string maSach = tbMaSach.Text.Trim();
+            string tenSach = tbTenSach.Text.Trim();
+            string tacGia = tbTacGia.Text.Trim();
+            string nhaXuatBan = tbNhaXuatBan.Text.Trim();
+            string maTheLoai = (cb1.SelectedIndex != -1) ? cb1.SelectedValue.ToString() : "";
+
+            if (string.IsNullOrWhiteSpace(maSach) &&
+                string.IsNullOrWhiteSpace(tenSach) &&
+                string.IsNullOrWhiteSpace(tacGia) &&
+                string.IsNullOrWhiteSpace(nhaXuatBan) &&
+                string.IsNullOrWhiteSpace(maTheLoai))
             {
-                MessageBox.Show("Vui lòng nhập mã sách cần tìm.");
+                MessageBox.Show("Vui lòng nhập ít nhất một thông tin (mã sách, tên sách, tác giả, nhà xuất bản hoặc thể loại) để tìm kiếm.",
+                                "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
 
-            DataTable dt = dtbase.DocBang($"SELECT * FROM Sach WHERE MaSach = N'{tbMaSach.Text}'");
+            string query = @"SELECT s.* 
+                     FROM Sach s
+                     LEFT JOIN TheLoai t ON s.MaTheLoai = t.MaTheLoai
+                     WHERE 1=1";
+
+            if (!string.IsNullOrWhiteSpace(maSach))
+                query += $" AND s.MaSach LIKE N'%{maSach}%'";
+
+            if (!string.IsNullOrWhiteSpace(tenSach))
+                query += $" AND s.TenSach LIKE N'%{tenSach}%'";
+
+            if (!string.IsNullOrWhiteSpace(tacGia))
+                query += $" AND s.TacGia LIKE N'%{tacGia}%'";
+
+            if (!string.IsNullOrWhiteSpace(nhaXuatBan))
+                query += $" AND s.NhaXuatBan LIKE N'%{nhaXuatBan}%'";
+
+            if (!string.IsNullOrWhiteSpace(maTheLoai))
+                query += $" AND s.MaTheLoai = N'{maTheLoai}'";
+
+            DataTable dt = dtbase.DocBang(query);
+
             if (dt.Rows.Count > 0)
             {
                 dgvSach.DataSource = dt;
+                MessageBox.Show($"Tìm thấy {dt.Rows.Count} kết quả phù hợp.", "Kết quả", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
-                MessageBox.Show("Không tìm thấy sách.");
+                MessageBox.Show("Không tìm thấy sách nào phù hợp với thông tin đã nhập.", "Kết quả", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 LoadDataToGrid();
-                resetall();
             }
         }
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
-            // Kiểm tra bắt buộc
             if (string.IsNullOrWhiteSpace(tbMaSach.Text) ||
                 string.IsNullOrWhiteSpace(tbTenSach.Text) ||
                 cb1.SelectedIndex == -1 ||
@@ -208,7 +249,6 @@ namespace BTL_C_
                 int namXuatBan = int.Parse(tbNamXuatBan.Text);
                 DateTime ngayNhap = dtNgayNhap.Value;
 
-                // Lấy ảnh hiện tại từ CSDL
                 string anhHienTai = GetCurrentImage(maSach);
                 string anhBia = string.IsNullOrEmpty(image) ? anhHienTai : image;
 
@@ -261,7 +301,6 @@ namespace BTL_C_
             }
         }
 
-        // =============== CHỌN ẢNH ===============
         private void ptAnh_Click(object sender, EventArgs e)
         {
             OpenFileDialog dlg = new OpenFileDialog();
@@ -292,7 +331,6 @@ namespace BTL_C_
             }
         }
 
-        // =============== NÚT RESET ===============
         private void btnReset_Click(object sender, EventArgs e)
         {
             resetall();

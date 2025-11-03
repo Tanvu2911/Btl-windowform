@@ -59,7 +59,7 @@
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(126, 46);
             this.btnThem.TabIndex = 1;
-            this.btnThem.Text = "Them";
+            this.btnThem.Text = "Thêm\r\n";
             this.btnThem.UseVisualStyleBackColor = true;
             this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
@@ -69,7 +69,7 @@
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(126, 46);
             this.btnSua.TabIndex = 2;
-            this.btnSua.Text = "Sua";
+            this.btnSua.Text = "Sửa";
             this.btnSua.UseVisualStyleBackColor = true;
             this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
@@ -79,7 +79,7 @@
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(126, 46);
             this.btnXoa.TabIndex = 3;
-            this.btnXoa.Text = "Xoa";
+            this.btnXoa.Text = "Xóa";
             this.btnXoa.UseVisualStyleBackColor = true;
             this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
@@ -89,7 +89,7 @@
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.Size = new System.Drawing.Size(126, 46);
             this.btnThoat.TabIndex = 4;
-            this.btnThoat.Text = "Thoat";
+            this.btnThoat.Text = "Thoát";
             this.btnThoat.UseVisualStyleBackColor = true;
             this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
             // 
@@ -99,7 +99,7 @@
             this.btnTim.Name = "btnTim";
             this.btnTim.Size = new System.Drawing.Size(126, 46);
             this.btnTim.TabIndex = 5;
-            this.btnTim.Text = "Tim";
+            this.btnTim.Text = "Tìm";
             this.btnTim.UseVisualStyleBackColor = true;
             this.btnTim.Click += new System.EventHandler(this.btnTim_Click);
             // 
@@ -115,18 +115,18 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(114, 59);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(101, 20);
+            this.label1.Size = new System.Drawing.Size(137, 30);
             this.label1.TabIndex = 7;
-            this.label1.Text = "Ten The Loai";
+            this.label1.Text = "Tên thể loại";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(114, 23);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(138, 30);
+            this.label2.Size = new System.Drawing.Size(129, 30);
             this.label2.TabIndex = 9;
-            this.label2.Text = "MaThe Loai";
+            this.label2.Text = "Mã thể loại";
             // 
             // tbMaTheLoai
             // 
