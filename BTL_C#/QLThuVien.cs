@@ -66,6 +66,10 @@ namespace BTL_C_
         {
             scoll.Height = btnThongKe.Height;
             scoll.Top = btnThongKe.Top;
+
+
+
+            thongKe1.BringToFront();
         }
 
         private void QLThuVien_Load(object sender, EventArgs e)
