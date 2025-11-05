@@ -99,21 +99,21 @@ namespace BTL_C_.UCs
             if (kieu == "Theo ngày")
             {
                 sqlCheck = $@"
-        SELECT COUNT(*) FROM PhieuMuon
-        WHERE CONVERT(date, NgayMuon) BETWEEN '{dtp1.Value:yyyy-MM-dd}' AND '{dtp2.Value:yyyy-MM-dd}'";
+                SELECT COUNT(*) FROM PhieuMuon
+                WHERE CONVERT(date, NgayMuon) BETWEEN '{dtp1.Value:yyyy-MM-dd}' AND '{dtp2.Value:yyyy-MM-dd}'";
             }
             else if (kieu == "Theo tháng")
             {
                 sqlCheck = $@"
-        SELECT COUNT(*) FROM PhieuMuon
-        WHERE YEAR(NgayMuon) = {dtp1.Value.Year}
-          AND MONTH(NgayMuon) BETWEEN {dtp1.Value.Month} AND {dtp2.Value.Month}";
+                SELECT COUNT(*) FROM PhieuMuon
+                WHERE YEAR(NgayMuon) = {dtp1.Value.Year}
+                AND MONTH(NgayMuon) BETWEEN {dtp1.Value.Month} AND {dtp2.Value.Month}";
             }
             else // Theo năm
             {
                 sqlCheck = $@"
-        SELECT COUNT(*) FROM PhieuMuon
-        WHERE YEAR(NgayMuon) BETWEEN {dtp1.Value.Year} AND {dtp2.Value.Year}";
+                SELECT COUNT(*) FROM PhieuMuon
+                WHERE YEAR(NgayMuon) BETWEEN {dtp1.Value.Year} AND {dtp2.Value.Year}";
             }
 
             int count = Convert.ToInt32(dtBase.ExecuteScalar(sqlCheck));
@@ -143,13 +143,13 @@ namespace BTL_C_.UCs
         }
         private void LoadDashboard()
         {
-            // Tổng sách
+            
             lbTongSach.Text = dtBase.ExecuteScalar("SELECT COUNT(*) FROM Sach").ToString();
 
-            // Tổng độc giả
+            
             lbDocGia.Text = dtBase.ExecuteScalar("SELECT COUNT(*) FROM DocGia").ToString();
 
-            // Tổng sách đang mượn
+            
             lbMuon.Text = dtBase.ExecuteScalar(@"
             SELECT COUNT(DISTINCT MaPhieu)
             FROM ChiTietMuon
@@ -171,29 +171,35 @@ namespace BTL_C_.UCs
             if (kieu == "Theo ngày")
             {
                 sql = $@"
-                SELECT CONVERT(date, NgayMuon) AS Ngay, COUNT(*) AS SoLuong
-                FROM PhieuMuon
-                WHERE NgayMuon BETWEEN '{dtp1.Value}' AND '{dtp2.Value}'
+                SELECT CONVERT(date, NgayMuon) AS Ngay, SUM(ct.SoLuong) AS SoLuong
+                FROM ChiTietMuon ct
+                JOIN PhieuMuon pm ON pm.MaPhieu = ct.MaPhieu
+                WHERE CONVERT(date, NgayMuon) BETWEEN '{dtp1.Value:yyyy-MM-dd}' AND '{dtp2.Value:yyyy-MM-dd}'
                 GROUP BY CONVERT(date, NgayMuon)
                 ORDER BY Ngay";
+
             }
             else if (kieu == "Theo tháng")
             {
                 sql = $@"
-                SELECT MONTH(NgayMuon) AS Thang, COUNT(*) AS SoLuong
-                FROM PhieuMuon
-                WHERE YEAR(NgayMuon) = {dtp1.Value.Year}
-                AND MONTH(NgayMuon) BETWEEN {dtp1.Value.Month} AND {dtp2.Value.Month}
-                GROUP BY MONTH(NgayMuon)
-                ORDER BY Thang";
+    SELECT MONTH(NgayMuon) AS Thang, SUM(ct.SoLuong) AS SoLuong
+    FROM ChiTietMuon ct
+    JOIN PhieuMuon pm ON pm.MaPhieu = ct.MaPhieu
+    WHERE YEAR(NgayMuon) = {dtp1.Value.Year}
+    AND MONTH(NgayMuon) BETWEEN {dtp1.Value.Month} AND {dtp2.Value.Month}
+    GROUP BY MONTH(NgayMuon)
+    ORDER BY Thang";
+
             }
-            else // Theo năm
+            else
             {
-                sql = @"
-                SELECT YEAR(NgayMuon) AS Nam, COUNT(*) AS SoLuong
-                FROM PhieuMuon
-                GROUP BY YEAR(NgayMuon)
-                ORDER BY Nam";
+                sql = $@"
+    SELECT YEAR(NgayMuon) AS Nam, SUM(ct.SoLuong) AS SoLuong
+    FROM ChiTietMuon ct
+    JOIN PhieuMuon pm ON pm.MaPhieu = ct.MaPhieu
+    GROUP BY YEAR(NgayMuon)
+    ORDER BY Nam";
+
             }
 
             DataTable dt = dtBase.DocBang(sql);
@@ -252,39 +258,42 @@ namespace BTL_C_.UCs
             if (kieu == "Theo ngày")
             {
                 sql = $@"
-                SELECT TheLoai.TenTheLoai, COUNT(*) AS Soluong
-                FROM ChiTietMuon ct
-                JOIN Sach s ON ct.MaSach = s.MaSach
-                JOIN TheLoai ON s.MaTheLoai = TheLoai.MaTheLoai
-                JOIN PhieuMuon pm ON pm.MaPhieu = ct.MaPhieu
-                WHERE CONVERT(date, NgayMuon) BETWEEN '{dtp1.Value:yyyy-MM-dd}' AND '{dtp2.Value:yyyy-MM-dd}'
-                GROUP BY TheLoai.TenTheLoai";
+    SELECT TheLoai.TenTheLoai, SUM(ct.SoLuong) AS Soluong
+    FROM ChiTietMuon ct
+    JOIN Sach s ON ct.MaSach = s.MaSach
+    JOIN TheLoai ON s.MaTheLoai = TheLoai.MaTheLoai
+    JOIN PhieuMuon pm ON pm.MaPhieu = ct.MaPhieu
+    WHERE CONVERT(date, NgayMuon) BETWEEN '{dtp1.Value:yyyy-MM-dd}' AND '{dtp2.Value:yyyy-MM-dd}'
+    GROUP BY TheLoai.TenTheLoai";
+
             }
             else if (kieu == "Theo tháng")
             {
                 sql = $@"
-                SELECT TheLoai.TenTheLoai, COUNT(*) AS Soluong
-                FROM ChiTietMuon ct
-                JOIN Sach s ON ct.MaSach = s.MaSach
-                JOIN TheLoai ON s.MaTheLoai = TheLoai.MaTheLoai
-                JOIN PhieuMuon pm ON pm.MaPhieu = ct.MaPhieu
-                WHERE pm.NgayMuon >= '{dtp1.Value:yyyy-MM-dd}'
-                AND pm.NgayMuon <= '{dtp2.Value:yyyy-MM-dd}'
-                GROUP BY TheLoai.TenTheLoai
-                ORDER BY TheLoai.TenTheLoai";
+    SELECT TheLoai.TenTheLoai, SUM(ct.SoLuong) AS Soluong
+    FROM ChiTietMuon ct
+    JOIN Sach s ON ct.MaSach = s.MaSach
+    JOIN TheLoai ON s.MaTheLoai = TheLoai.MaTheLoai
+    JOIN PhieuMuon pm ON pm.MaPhieu = ct.MaPhieu
+    WHERE pm.NgayMuon >= '{dtp1.Value:yyyy-MM-dd}'
+    AND pm.NgayMuon <= '{dtp2.Value:yyyy-MM-dd}'
+    GROUP BY TheLoai.TenTheLoai
+    ORDER BY TheLoai.TenTheLoai";
+
             }
-            else // Theo năm
+            else
             {
                 sql = $@"
-                SELECT TheLoai.TenTheLoai, COUNT(*) AS Soluong
-                FROM ChiTietMuon ct
-                JOIN Sach s ON ct.MaSach = s.MaSach
-                JOIN TheLoai ON s.MaTheLoai = TheLoai.MaTheLoai
-                JOIN PhieuMuon pm ON pm.MaPhieu = ct.MaPhieu
-                WHERE YEAR(NgayMuon) BETWEEN {dtp1.Value.Year} AND {dtp2.Value.Year}
-                GROUP BY TheLoai.TenTheLoai";
+    SELECT TheLoai.TenTheLoai, SUM(ct.SoLuong) AS Soluong
+    FROM ChiTietMuon ct
+    JOIN Sach s ON ct.MaSach = s.MaSach
+    JOIN TheLoai ON s.MaTheLoai = TheLoai.MaTheLoai
+    JOIN PhieuMuon pm ON pm.MaPhieu = ct.MaPhieu
+    WHERE YEAR(NgayMuon) BETWEEN {dtp1.Value.Year} AND {dtp2.Value.Year}
+    GROUP BY TheLoai.TenTheLoai";
+
             }
-            
+
             DataTable dt = dtBase.DocBang(sql);
 
             pieMuon.Series.Clear();

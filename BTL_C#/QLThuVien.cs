@@ -55,20 +55,19 @@ namespace BTL_C_
 
 
         }
-
-        private void button7_Click(object sender, EventArgs e)
+        private void btnNhanVien_Click(object sender, EventArgs e)
         {
             scoll.Height = btnNhanVien.Height;
             scoll.Top = btnNhanVien.Top;
+            NhanVien1.BringToFront();
+
         }
+
 
         private void button6_Click(object sender, EventArgs e)
         {
             scoll.Height = btnThongKe.Height;
             scoll.Top = btnThongKe.Top;
-
-
-
             thongKe1.BringToFront();
         }
 
@@ -98,6 +97,8 @@ namespace BTL_C_
         {
 
         }
+
+        
 
         //private void ptLogo_Click(object sender, EventArgs e)
         //{

@@ -41,14 +41,15 @@ namespace BTL_C_
             this.btnThongKe = new System.Windows.Forms.Button();
             this.btnSach = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.lbTen = new System.Windows.Forms.Label();
+            this.ptAvartar = new System.Windows.Forms.PictureBox();
+            this.ptLogo = new System.Windows.Forms.PictureBox();
+            this.NhanVien1 = new BTL_C_.UCs.NhanVien();
             this.thongKe1 = new BTL_C_.UCs.ThongKe();
             this.phieuMuon2 = new BTL_C_.UCs.PhieuMuon();
             this.docGia1 = new BTL_C_.UCs.DocGia();
             this.searchSach1 = new BTL_C_.SearchSach();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.ptAvartar = new System.Windows.Forms.PictureBox();
-            this.lbTen = new System.Windows.Forms.Label();
-            this.ptLogo = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -70,9 +71,9 @@ namespace BTL_C_
             this.panel1.Controls.Add(this.btnSach);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(125, 489);
+            this.panel1.Size = new System.Drawing.Size(167, 602);
             this.panel1.TabIndex = 0;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -81,10 +82,9 @@ namespace BTL_C_
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label1.Location = new System.Drawing.Point(19, 23);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(25, 28);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(87, 20);
+            this.label1.Size = new System.Drawing.Size(101, 25);
             this.label1.TabIndex = 11;
             this.label1.Text = "LIBRARY";
             // 
@@ -95,10 +95,10 @@ namespace BTL_C_
             this.btnTaiKhoan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTaiKhoan.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnTaiKhoan.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnTaiKhoan.Location = new System.Drawing.Point(8, 269);
-            this.btnTaiKhoan.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnTaiKhoan.Location = new System.Drawing.Point(11, 331);
+            this.btnTaiKhoan.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnTaiKhoan.Name = "btnTaiKhoan";
-            this.btnTaiKhoan.Size = new System.Drawing.Size(117, 32);
+            this.btnTaiKhoan.Size = new System.Drawing.Size(156, 39);
             this.btnTaiKhoan.TabIndex = 10;
             this.btnTaiKhoan.Text = "Tài Khoản";
             this.btnTaiKhoan.UseVisualStyleBackColor = false;
@@ -111,10 +111,10 @@ namespace BTL_C_
             this.btnLogOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnLogOut.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnLogOut.Location = new System.Drawing.Point(-2, 439);
-            this.btnLogOut.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnLogOut.Location = new System.Drawing.Point(-3, 540);
+            this.btnLogOut.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnLogOut.Name = "btnLogOut";
-            this.btnLogOut.Size = new System.Drawing.Size(125, 47);
+            this.btnLogOut.Size = new System.Drawing.Size(167, 58);
             this.btnLogOut.TabIndex = 1;
             this.btnLogOut.Text = "Đăng xuất";
             this.btnLogOut.UseVisualStyleBackColor = false;
@@ -123,10 +123,10 @@ namespace BTL_C_
             // scoll
             // 
             this.scoll.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.scoll.Location = new System.Drawing.Point(2, 90);
-            this.scoll.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.scoll.Location = new System.Drawing.Point(3, 111);
+            this.scoll.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.scoll.Name = "scoll";
-            this.scoll.Size = new System.Drawing.Size(7, 32);
+            this.scoll.Size = new System.Drawing.Size(9, 39);
             this.scoll.TabIndex = 2;
             // 
             // btnDocGia
@@ -136,10 +136,10 @@ namespace BTL_C_
             this.btnDocGia.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDocGia.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnDocGia.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnDocGia.Location = new System.Drawing.Point(2, 126);
-            this.btnDocGia.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnDocGia.Location = new System.Drawing.Point(3, 155);
+            this.btnDocGia.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnDocGia.Name = "btnDocGia";
-            this.btnDocGia.Size = new System.Drawing.Size(123, 32);
+            this.btnDocGia.Size = new System.Drawing.Size(164, 39);
             this.btnDocGia.TabIndex = 8;
             this.btnDocGia.Text = "Độc giả";
             this.btnDocGia.UseVisualStyleBackColor = false;
@@ -152,10 +152,10 @@ namespace BTL_C_
             this.btnMuonTra.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMuonTra.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnMuonTra.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnMuonTra.Location = new System.Drawing.Point(2, 162);
-            this.btnMuonTra.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnMuonTra.Location = new System.Drawing.Point(3, 199);
+            this.btnMuonTra.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnMuonTra.Name = "btnMuonTra";
-            this.btnMuonTra.Size = new System.Drawing.Size(123, 32);
+            this.btnMuonTra.Size = new System.Drawing.Size(164, 39);
             this.btnMuonTra.TabIndex = 7;
             this.btnMuonTra.Text = "Mượn-trả";
             this.btnMuonTra.UseVisualStyleBackColor = false;
@@ -168,14 +168,14 @@ namespace BTL_C_
             this.btnNhanVien.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNhanVien.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnNhanVien.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnNhanVien.Location = new System.Drawing.Point(2, 198);
-            this.btnNhanVien.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnNhanVien.Location = new System.Drawing.Point(3, 244);
+            this.btnNhanVien.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnNhanVien.Name = "btnNhanVien";
-            this.btnNhanVien.Size = new System.Drawing.Size(123, 32);
+            this.btnNhanVien.Size = new System.Drawing.Size(164, 39);
             this.btnNhanVien.TabIndex = 6;
             this.btnNhanVien.Text = "Nhân viên";
             this.btnNhanVien.UseVisualStyleBackColor = false;
-            this.btnNhanVien.Click += new System.EventHandler(this.button7_Click);
+            this.btnNhanVien.Click += new System.EventHandler(this.btnNhanVien_Click);
             // 
             // btnThongKe
             // 
@@ -184,10 +184,10 @@ namespace BTL_C_
             this.btnThongKe.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnThongKe.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnThongKe.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnThongKe.Location = new System.Drawing.Point(0, 233);
-            this.btnThongKe.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnThongKe.Location = new System.Drawing.Point(0, 287);
+            this.btnThongKe.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnThongKe.Name = "btnThongKe";
-            this.btnThongKe.Size = new System.Drawing.Size(123, 32);
+            this.btnThongKe.Size = new System.Drawing.Size(164, 39);
             this.btnThongKe.TabIndex = 5;
             this.btnThongKe.Text = "Thống kê";
             this.btnThongKe.UseVisualStyleBackColor = false;
@@ -200,10 +200,10 @@ namespace BTL_C_
             this.btnSach.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSach.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnSach.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnSach.Location = new System.Drawing.Point(2, 90);
-            this.btnSach.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSach.Location = new System.Drawing.Point(3, 111);
+            this.btnSach.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSach.Name = "btnSach";
-            this.btnSach.Size = new System.Drawing.Size(123, 32);
+            this.btnSach.Size = new System.Drawing.Size(164, 39);
             this.btnSach.TabIndex = 0;
             this.btnSach.Text = "Sách";
             this.btnSach.UseVisualStyleBackColor = false;
@@ -211,52 +211,16 @@ namespace BTL_C_
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.NhanVien1);
             this.panel2.Controls.Add(this.thongKe1);
             this.panel2.Controls.Add(this.phieuMuon2);
             this.panel2.Controls.Add(this.docGia1);
             this.panel2.Controls.Add(this.searchSach1);
-            this.panel2.Location = new System.Drawing.Point(129, 56);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel2.Location = new System.Drawing.Point(172, 69);
+            this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(673, 429);
+            this.panel2.Size = new System.Drawing.Size(897, 528);
             this.panel2.TabIndex = 1;
-            // 
-            // thongKe1
-            // 
-            this.thongKe1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.thongKe1.Location = new System.Drawing.Point(0, 0);
-            this.thongKe1.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
-            this.thongKe1.Name = "thongKe1";
-            this.thongKe1.Size = new System.Drawing.Size(673, 429);
-            this.thongKe1.TabIndex = 3;
-            // 
-            // phieuMuon2
-            // 
-            this.phieuMuon2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.phieuMuon2.Location = new System.Drawing.Point(0, 0);
-            this.phieuMuon2.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
-            this.phieuMuon2.Name = "phieuMuon2";
-            this.phieuMuon2.Size = new System.Drawing.Size(673, 429);
-            this.phieuMuon2.TabIndex = 2;
-            // 
-            // docGia1
-            // 
-            this.docGia1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.docGia1.Location = new System.Drawing.Point(0, 0);
-            this.docGia1.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
-            this.docGia1.Name = "docGia1";
-            this.docGia1.Size = new System.Drawing.Size(673, 429);
-            this.docGia1.TabIndex = 1;
-            // 
-            // searchSach1
-            // 
-            this.searchSach1.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.searchSach1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.searchSach1.Location = new System.Drawing.Point(0, 0);
-            this.searchSach1.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
-            this.searchSach1.Name = "searchSach1";
-            this.searchSach1.Size = new System.Drawing.Size(673, 429);
-            this.searchSach1.TabIndex = 0;
             // 
             // panel3
             // 
@@ -265,55 +229,99 @@ namespace BTL_C_
             this.panel3.Controls.Add(this.lbTen);
             this.panel3.Controls.Add(this.ptLogo);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel3.Location = new System.Drawing.Point(125, 0);
-            this.panel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel3.Location = new System.Drawing.Point(167, 0);
+            this.panel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(701, 58);
+            this.panel3.Size = new System.Drawing.Size(934, 71);
             this.panel3.TabIndex = 2;
             this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
-            // 
-            // ptAvartar
-            // 
-            this.ptAvartar.Location = new System.Drawing.Point(425, 8);
-            this.ptAvartar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.ptAvartar.Name = "ptAvartar";
-            this.ptAvartar.Size = new System.Drawing.Size(42, 38);
-            this.ptAvartar.TabIndex = 2;
-            this.ptAvartar.TabStop = false;
             // 
             // lbTen
             // 
             this.lbTen.AutoSize = true;
             this.lbTen.Font = new System.Drawing.Font("Lucida Console", 10F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTen.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lbTen.Location = new System.Drawing.Point(471, 23);
-            this.lbTen.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbTen.Location = new System.Drawing.Point(628, 28);
             this.lbTen.Name = "lbTen";
-            this.lbTen.Size = new System.Drawing.Size(87, 14);
+            this.lbTen.Size = new System.Drawing.Size(108, 17);
             this.lbTen.TabIndex = 0;
             this.lbTen.Text = "Xin chào :";
+            // 
+            // ptAvartar
+            // 
+            this.ptAvartar.Location = new System.Drawing.Point(567, 10);
+            this.ptAvartar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.ptAvartar.Name = "ptAvartar";
+            this.ptAvartar.Size = new System.Drawing.Size(56, 47);
+            this.ptAvartar.TabIndex = 2;
+            this.ptAvartar.TabStop = false;
             // 
             // ptLogo
             // 
             this.ptLogo.Image = global::BTL_C_.Properties.Resources.images_Photoroom;
             this.ptLogo.Location = new System.Drawing.Point(0, 0);
-            this.ptLogo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ptLogo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ptLogo.Name = "ptLogo";
-            this.ptLogo.Size = new System.Drawing.Size(60, 55);
+            this.ptLogo.Size = new System.Drawing.Size(80, 68);
             this.ptLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.ptLogo.TabIndex = 9;
             this.ptLogo.TabStop = false;
             this.ptLogo.Click += new System.EventHandler(this.ptLogo_Click);
             // 
+            // NhanVien1
+            // 
+            this.NhanVien1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.NhanVien1.Location = new System.Drawing.Point(0, 0);
+            this.NhanVien1.Name = "NhanVien1";
+            this.NhanVien1.Size = new System.Drawing.Size(897, 528);
+            this.NhanVien1.TabIndex = 4;
+            // 
+            // thongKe1
+            // 
+            this.thongKe1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.thongKe1.Location = new System.Drawing.Point(0, 0);
+            this.thongKe1.Margin = new System.Windows.Forms.Padding(1);
+            this.thongKe1.Name = "thongKe1";
+            this.thongKe1.Size = new System.Drawing.Size(897, 528);
+            this.thongKe1.TabIndex = 3;
+            // 
+            // phieuMuon2
+            // 
+            this.phieuMuon2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.phieuMuon2.Location = new System.Drawing.Point(0, 0);
+            this.phieuMuon2.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
+            this.phieuMuon2.Name = "phieuMuon2";
+            this.phieuMuon2.Size = new System.Drawing.Size(897, 528);
+            this.phieuMuon2.TabIndex = 2;
+            // 
+            // docGia1
+            // 
+            this.docGia1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.docGia1.Location = new System.Drawing.Point(0, 0);
+            this.docGia1.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
+            this.docGia1.Name = "docGia1";
+            this.docGia1.Size = new System.Drawing.Size(897, 528);
+            this.docGia1.TabIndex = 1;
+            // 
+            // searchSach1
+            // 
+            this.searchSach1.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.searchSach1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.searchSach1.Location = new System.Drawing.Point(0, 0);
+            this.searchSach1.Margin = new System.Windows.Forms.Padding(1);
+            this.searchSach1.Name = "searchSach1";
+            this.searchSach1.Size = new System.Drawing.Size(897, 528);
+            this.searchSach1.TabIndex = 0;
+            // 
             // QLThuVien
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(826, 489);
+            this.ClientSize = new System.Drawing.Size(1101, 602);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "QLThuVien";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "QLThuVien";
@@ -352,5 +360,6 @@ namespace BTL_C_
         private PhieuMuon phieuMuon2;
         private DocGia docGia1;
         private ThongKe thongKe1;
+        private NhanVien NhanVien1;
     }
 }

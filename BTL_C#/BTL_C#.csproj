@@ -85,6 +85,12 @@
     <Compile Include="UCs\DocGia.Designer.cs">
       <DependentUpon>DocGia.cs</DependentUpon>
     </Compile>
+    <Compile Include="UCs\NhanVien.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCs\NhanVien.Designer.cs">
+      <DependentUpon>NhanVien.cs</DependentUpon>
+    </Compile>
     <Compile Include="UCs\PhieuMuon.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -136,6 +142,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UCs\DocGia.resx">
       <DependentUpon>DocGia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCs\NhanVien.resx">
+      <DependentUpon>NhanVien.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UCs\PhieuMuon.resx">
       <DependentUpon>PhieuMuon.cs</DependentUpon>
