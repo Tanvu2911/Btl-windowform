@@ -191,7 +191,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.BackColor = System.Drawing.Color.LightCyan;
             this.Controls.Add(this.btnExcel);
             this.Controls.Add(this.gbTimKiem);
             this.Controls.Add(this.btTheLoai);
