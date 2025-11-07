@@ -135,5 +135,13 @@ namespace BTL_C_
             tbMaTheLoai.Text = dgvTheLoai.CurrentRow.Cells[0].Value.ToString();
             tbTim.Text = dgvTheLoai.CurrentRow.Cells[1].Value.ToString();
         }
+
+        private void btnLamMoi_Click(object sender, EventArgs e)
+        {
+            tbMaTheLoai.Text = "";
+            tbTim.Text = "";
+            DataTable dt2 = db.DocBang("select * from TheLoai");
+            dgvTheLoai.DataSource = dt2;
+        }
     }
 }

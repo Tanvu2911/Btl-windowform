@@ -55,20 +55,30 @@ namespace BTL_C_
 
 
         }
-
-        private void button7_Click(object sender, EventArgs e)
+        private void btnNhanVien_Click(object sender, EventArgs e)
         {
+            if(Form1.LoggedInRole == "NhanVien")
+            {
+                MessageBox.Show("Chỉ có Admin mới có quyền truy cập");
+                return;
+            }
             scoll.Height = btnNhanVien.Height;
             scoll.Top = btnNhanVien.Top;
+            ucQuanLyNhanVien1.BringToFront();
+
         }
+
 
         private void button6_Click(object sender, EventArgs e)
         {
+
+            if (Form1.LoggedInRole == "NhanVien")
+            {
+                MessageBox.Show("Chỉ có Admin mới có quyền truy cập");
+                return;
+            }
             scoll.Height = btnThongKe.Height;
             scoll.Top = btnThongKe.Top;
-
-
-
             thongKe1.BringToFront();
         }
 
@@ -98,6 +108,8 @@ namespace BTL_C_
         {
 
         }
+
+        
 
         //private void ptLogo_Click(object sender, EventArgs e)
         //{

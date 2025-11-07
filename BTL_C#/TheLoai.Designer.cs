@@ -38,6 +38,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.tbMaTheLoai = new System.Windows.Forms.TextBox();
+            this.btnLamMoi = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTheLoai)).BeginInit();
             this.SuspendLayout();
             // 
@@ -65,7 +66,7 @@
             // 
             // btnSua
             // 
-            this.btnSua.Location = new System.Drawing.Point(232, 95);
+            this.btnSua.Location = new System.Drawing.Point(190, 95);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(126, 46);
             this.btnSua.TabIndex = 2;
@@ -75,7 +76,7 @@
             // 
             // btnXoa
             // 
-            this.btnXoa.Location = new System.Drawing.Point(446, 95);
+            this.btnXoa.Location = new System.Drawing.Point(342, 95);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(126, 46);
             this.btnXoa.TabIndex = 3;
@@ -115,7 +116,7 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(114, 59);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(137, 30);
+            this.label1.Size = new System.Drawing.Size(91, 20);
             this.label1.TabIndex = 7;
             this.label1.Text = "Tên thể loại";
             // 
@@ -124,7 +125,7 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(114, 23);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(129, 30);
+            this.label2.Size = new System.Drawing.Size(86, 20);
             this.label2.TabIndex = 9;
             this.label2.Text = "Mã thể loại";
             // 
@@ -135,11 +136,22 @@
             this.tbMaTheLoai.Size = new System.Drawing.Size(280, 26);
             this.tbMaTheLoai.TabIndex = 8;
             // 
+            // btnLamMoi
+            // 
+            this.btnLamMoi.Location = new System.Drawing.Point(491, 95);
+            this.btnLamMoi.Name = "btnLamMoi";
+            this.btnLamMoi.Size = new System.Drawing.Size(126, 46);
+            this.btnLamMoi.TabIndex = 10;
+            this.btnLamMoi.Text = "Làm mới";
+            this.btnLamMoi.UseVisualStyleBackColor = true;
+            this.btnLamMoi.Click += new System.EventHandler(this.btnLamMoi_Click);
+            // 
             // TheLoai
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnLamMoi);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.tbMaTheLoai);
             this.Controls.Add(this.label1);
@@ -172,5 +184,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox tbMaTheLoai;
+        private System.Windows.Forms.Button btnLamMoi;
     }
 }

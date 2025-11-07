@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label8 = new System.Windows.Forms.Label();
             this.dtNgayNhap = new System.Windows.Forms.DateTimePicker();
             this.label7 = new System.Windows.Forms.Label();
@@ -96,9 +96,9 @@
             // 
             // btnTim
             // 
-            this.btnTim.BackColor = System.Drawing.Color.SandyBrown;
-            this.btnTim.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnTim.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnTim.BackColor = System.Drawing.Color.Teal;
+            this.btnTim.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnTim.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnTim.Location = new System.Drawing.Point(735, 590);
             this.btnTim.Name = "btnTim";
             this.btnTim.Size = new System.Drawing.Size(124, 59);
@@ -109,9 +109,9 @@
             // 
             // btnLuu
             // 
-            this.btnLuu.BackColor = System.Drawing.Color.SandyBrown;
-            this.btnLuu.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnLuu.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnLuu.BackColor = System.Drawing.Color.Teal;
+            this.btnLuu.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnLuu.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnLuu.Location = new System.Drawing.Point(567, 594);
             this.btnLuu.Name = "btnLuu";
             this.btnLuu.Size = new System.Drawing.Size(121, 59);
@@ -247,14 +247,14 @@
             // 
             this.dgvSach.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dgvSach.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Orange;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvSach.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Orange;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvSach.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvSach.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvSach.Location = new System.Drawing.Point(0, 0);
             this.dgvSach.Name = "dgvSach";
@@ -266,8 +266,9 @@
             // 
             // btnXoa
             // 
-            this.btnXoa.BackColor = System.Drawing.Color.SandyBrown;
-            this.btnXoa.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnXoa.BackColor = System.Drawing.Color.Teal;
+            this.btnXoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnXoa.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnXoa.Location = new System.Drawing.Point(407, 595);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(112, 59);
@@ -278,8 +279,9 @@
             // 
             // btnSua
             // 
-            this.btnSua.BackColor = System.Drawing.Color.SandyBrown;
-            this.btnSua.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnSua.BackColor = System.Drawing.Color.Teal;
+            this.btnSua.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnSua.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnSua.Location = new System.Drawing.Point(238, 593);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(119, 59);
@@ -290,8 +292,9 @@
             // 
             // btnThem
             // 
-            this.btnThem.BackColor = System.Drawing.Color.SandyBrown;
-            this.btnThem.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnThem.BackColor = System.Drawing.Color.Teal;
+            this.btnThem.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnThem.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnThem.Location = new System.Drawing.Point(57, 591);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(119, 59);
@@ -313,9 +316,9 @@
             // 
             // btnReset
             // 
-            this.btnReset.BackColor = System.Drawing.Color.SandyBrown;
-            this.btnReset.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnReset.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnReset.BackColor = System.Drawing.Color.Teal;
+            this.btnReset.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnReset.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnReset.Location = new System.Drawing.Point(914, 590);
             this.btnReset.Name = "btnReset";
             this.btnReset.Size = new System.Drawing.Size(124, 59);
@@ -328,7 +331,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Bisque;
+            this.BackColor = System.Drawing.Color.LightCyan;
             this.ClientSize = new System.Drawing.Size(1069, 680);
             this.Controls.Add(this.btnReset);
             this.Controls.Add(this.label8);
