@@ -30,16 +30,16 @@ namespace BTL_C_
             this.btnThongKe = new System.Windows.Forms.Button();
             this.btnSach = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.ptAvartar = new System.Windows.Forms.PictureBox();
-            this.lbTen = new System.Windows.Forms.Label();
-            this.ptLogo = new System.Windows.Forms.PictureBox();
+            this.taiKhoan1 = new BTL_C_.UCs.TaiKhoan();
             this.ucQuanLyNhanVien1 = new BTL_C_.UCs.ucQuanLyNhanVien();
             this.thongKe1 = new BTL_C_.UCs.ThongKe();
             this.phieuMuon2 = new BTL_C_.UCs.PhieuMuon();
             this.docGia1 = new BTL_C_.UCs.DocGia();
             this.searchSach1 = new BTL_C_.SearchSach();
-            this.taiKhoan1 = new BTL_C_.UCs.TaiKhoan();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.ptAvartar = new System.Windows.Forms.PictureBox();
+            this.lbTen = new System.Windows.Forms.Label();
+            this.ptLogo = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -203,48 +203,15 @@ namespace BTL_C_
             this.panel2.Size = new System.Drawing.Size(1010, 660);
             this.panel2.TabIndex = 1;
             // 
-            // panel3
+            // taiKhoan1
             // 
-            this.panel3.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.panel3.Controls.Add(this.ptAvartar);
-            this.panel3.Controls.Add(this.lbTen);
-            this.panel3.Controls.Add(this.ptLogo);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel3.Location = new System.Drawing.Point(188, 0);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1051, 89);
-            this.panel3.TabIndex = 2;
-            this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
-            // 
-            // ptAvartar
-            // 
-            this.ptAvartar.Location = new System.Drawing.Point(638, 12);
-            this.ptAvartar.Name = "ptAvartar";
-            this.ptAvartar.Size = new System.Drawing.Size(63, 58);
-            this.ptAvartar.TabIndex = 2;
-            this.ptAvartar.TabStop = false;
-            // 
-            // lbTen
-            // 
-            this.lbTen.AutoSize = true;
-            this.lbTen.Font = new System.Drawing.Font("Lucida Console", 10F, System.Drawing.FontStyle.Italic);
-            this.lbTen.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lbTen.Location = new System.Drawing.Point(706, 35);
-            this.lbTen.Name = "lbTen";
-            this.lbTen.Size = new System.Drawing.Size(129, 20);
-            this.lbTen.TabIndex = 0;
-            this.lbTen.Text = "Xin chào :";
-            // 
-            // ptLogo
-            // 
-            this.ptLogo.Image = global::BTL_C_.Properties.Resources.images_Photoroom;
-            this.ptLogo.Location = new System.Drawing.Point(0, 0);
-            this.ptLogo.Name = "ptLogo";
-            this.ptLogo.Size = new System.Drawing.Size(90, 85);
-            this.ptLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.ptLogo.TabIndex = 9;
-            this.ptLogo.TabStop = false;
-            this.ptLogo.Click += new System.EventHandler(this.ptLogo_Click);
+            this.taiKhoan1.BackColor = System.Drawing.Color.LightCyan;
+            this.taiKhoan1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.taiKhoan1.Location = new System.Drawing.Point(0, 0);
+            this.taiKhoan1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.taiKhoan1.Name = "taiKhoan1";
+            this.taiKhoan1.Size = new System.Drawing.Size(1010, 660);
+            this.taiKhoan1.TabIndex = 5;
             // 
             // ucQuanLyNhanVien1
             // 
@@ -291,15 +258,48 @@ namespace BTL_C_
             this.searchSach1.Size = new System.Drawing.Size(1010, 660);
             this.searchSach1.TabIndex = 0;
             // 
-            // taiKhoan1
+            // panel3
             // 
-            this.taiKhoan1.BackColor = System.Drawing.Color.LightCyan;
-            this.taiKhoan1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.taiKhoan1.Location = new System.Drawing.Point(0, 0);
-            this.taiKhoan1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.taiKhoan1.Name = "taiKhoan1";
-            this.taiKhoan1.Size = new System.Drawing.Size(1010, 660);
-            this.taiKhoan1.TabIndex = 5;
+            this.panel3.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.panel3.Controls.Add(this.ptAvartar);
+            this.panel3.Controls.Add(this.lbTen);
+            this.panel3.Controls.Add(this.ptLogo);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel3.Location = new System.Drawing.Point(188, 0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(1051, 89);
+            this.panel3.TabIndex = 2;
+            this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
+            // 
+            // ptAvartar
+            // 
+            this.ptAvartar.Location = new System.Drawing.Point(638, 12);
+            this.ptAvartar.Name = "ptAvartar";
+            this.ptAvartar.Size = new System.Drawing.Size(63, 58);
+            this.ptAvartar.TabIndex = 2;
+            this.ptAvartar.TabStop = false;
+            // 
+            // lbTen
+            // 
+            this.lbTen.AutoSize = true;
+            this.lbTen.Font = new System.Drawing.Font("Lucida Console", 10F, System.Drawing.FontStyle.Italic);
+            this.lbTen.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lbTen.Location = new System.Drawing.Point(706, 35);
+            this.lbTen.Name = "lbTen";
+            this.lbTen.Size = new System.Drawing.Size(129, 20);
+            this.lbTen.TabIndex = 0;
+            this.lbTen.Text = "Xin chào :";
+            // 
+            // ptLogo
+            // 
+            this.ptLogo.Image = global::BTL_C_.Properties.Resources.images_Photoroom;
+            this.ptLogo.Location = new System.Drawing.Point(0, 0);
+            this.ptLogo.Name = "ptLogo";
+            this.ptLogo.Size = new System.Drawing.Size(90, 85);
+            this.ptLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ptLogo.TabIndex = 9;
+            this.ptLogo.TabStop = false;
+            this.ptLogo.Click += new System.EventHandler(this.ptLogo_Click);
             // 
             // QLThuVien
             // 
@@ -310,6 +310,8 @@ namespace BTL_C_
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "QLThuVien";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "QLThuVien";

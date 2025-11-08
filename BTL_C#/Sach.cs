@@ -342,6 +342,11 @@ namespace BTL_C_
             btnXoa.Enabled = false;
         }
 
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
         //private void btnExcel_Click(object sender, EventArgs e)
         //{
 

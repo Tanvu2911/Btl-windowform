@@ -159,7 +159,6 @@ namespace BTL_C_
                 tentruong.Range["H4"].Value = "Ngày Nhập";
                 tentruong.Range["I4"].Value = "Ảnh";
 
-                // Lấy tên thể loại
                 DataTable dtTheLoai = dtbase.DocBang("SELECT MaTheLoai, TenTheLoai FROM TheLoai");
                 var dicTheLoai = dtTheLoai.AsEnumerable()
                     .ToDictionary(row => row["MaTheLoai"].ToString(), row => row["TenTheLoai"].ToString());
@@ -177,7 +176,7 @@ namespace BTL_C_
                         ? dicTheLoai[row["MaTheLoai"].ToString()] : row["MaTheLoai"].ToString();
                     tentruong.Range["G" + hang].Value = row["SoLuong"];
                     tentruong.Range["H" + hang].Value = Convert.ToDateTime(row["NgayNhap"]).ToString("dd/MM/yyyy");
-                    tentruong.Range["I" + hang].Value = row["Anh"].ToString(); // CHỈ GHI TÊN ẢNH
+                    tentruong.Range["I" + hang].Value = row["Anh"].ToString();
 
                     hang++;
                 }

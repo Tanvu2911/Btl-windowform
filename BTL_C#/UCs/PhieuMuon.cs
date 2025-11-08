@@ -31,6 +31,7 @@ namespace BTL_C_.UCs
             dtSachMuon.Columns.Add("TenSach", typeof(string));
             dtSachMuon.Columns.Add("TacGia", typeof(string));
             dtSachMuon.Columns.Add("SoLuong", typeof(int));
+            dtSachMuon.Columns.Add("SoNgayMuon", typeof(int));
             dtSachMuon.Columns.Add("TrangThai", typeof(string));
         }
         #endregion
@@ -103,18 +104,18 @@ namespace BTL_C_.UCs
         {
             string sql = $@"
                 SELECT 
-                    ct.MaSach,
-                    s.TenSach,
-                    s.TacGia,
-                    ct.SoLuong,
-                    ct.TrangThai,
-                    pm.MaPhieu,
-                    pm.NgayMuon,
-                    pm.NgayHenTra,
-                    CASE 
-                        WHEN GETDATE() <= pm.NgayHenTra THEN N'Còn hạn'
-                        ELSE N'Quá hạn'
-                    END AS TrangThaiHan
+                ct.MaSach,
+                s.TenSach,
+                s.TacGia,
+                ct.SoLuong,
+                ct.TrangThai,
+                pm.MaPhieu,
+                pm.NgayMuon,
+                ct.NgayHenTra, 
+                CASE 
+                    WHEN GETDATE() <= ct.NgayHenTra THEN N'Còn hạn'
+                    ELSE N'Quá hạn'
+                END AS TrangThaiHan
                 FROM ChiTietMuon ct
                 JOIN Sach s ON ct.MaSach = s.MaSach
                 JOIN PhieuMuon pm ON ct.MaPhieu = pm.MaPhieu
@@ -125,11 +126,11 @@ namespace BTL_C_.UCs
             {
                 DataTable dt = db.DocBang(sql);
 
-                // Thêm cột trạng thái hạn nếu chưa có (tránh lỗi khi bind)
+
                 if (!dt.Columns.Contains("TrangThaiHan"))
                     dt.Columns.Add("TrangThaiHan", typeof(string));
 
-                // Gán DataSource
+
                 dgvSachDangMuon.DataSource = dt;
 
                 dgvSachDangMuon.Columns["MaSach"].HeaderText = "Mã sách";
@@ -141,21 +142,21 @@ namespace BTL_C_.UCs
                 dgvSachDangMuon.Columns["NgayHenTra"].HeaderText = "Hết hạn";
                 dgvSachDangMuon.Columns["TrangThaiHan"].HeaderText = "Hạn mượn";
 
-                // Ẩn MaPhieu
+
                 dgvSachDangMuon.Columns["MaPhieu"].Visible = false;
 
-                // Tùy chỉnh hiển thị cột
+
                 if (dgvSachDangMuon.Columns["MaPhieu"] != null)
                     dgvSachDangMuon.Columns["MaPhieu"].Visible = false; // Ẩn MaPhieu
 
-                // Định dạng ngày
+
                 if (dgvSachDangMuon.Columns["NgayMuon"] != null)
                     dgvSachDangMuon.Columns["NgayMuon"].DefaultCellStyle.Format = "dd/MM/yyyy";
 
                 if (dgvSachDangMuon.Columns["NgayHenTra"] != null)
                     dgvSachDangMuon.Columns["NgayHenTra"].DefaultCellStyle.Format = "dd/MM/yyyy";
 
-                // Tô màu dòng quá hạn
+
                 foreach (DataGridViewRow row in dgvSachDangMuon.Rows)
                 {
                     if (row.Cells["TrangThaiHan"].Value?.ToString() == "Quá hạn")
@@ -166,7 +167,7 @@ namespace BTL_C_.UCs
                     }
                 }
 
-                // Cập nhật maPhieuHienTai (lấy từ dòng đầu nếu có)
+
                 maPhieuHienTai = dt.Rows.Count > 0
                     ? Convert.ToInt32(dt.Rows[0]["MaPhieu"])
                     : -1;
@@ -176,7 +177,8 @@ namespace BTL_C_.UCs
                     MessageBox.Show($"Cảnh báo: Có {quaHan} sách quá hạn!", "Quá hạn",
                                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     btnMuonSach.Enabled = false;
-                } else
+                }
+                else
                 {
                     btnMuonSach.Enabled = true;
                 }
@@ -246,8 +248,19 @@ namespace BTL_C_.UCs
                 return;
             }
 
-            // Thêm vào bảng tạm
-            dtSachMuon.Rows.Add(maSach, tenSach, tacGia, soLuong, "Đang mượn");
+
+            string inputNgay = Microsoft.VisualBasic.Interaction.InputBox(
+                "Nhập số ngày mượn", "Số ngày mượn", "3");
+
+            if (string.IsNullOrEmpty(inputNgay)) return;
+            if (!int.TryParse(inputNgay, out int soNgayMuon) || soNgayMuon <= 0)
+            {
+                MessageBox.Show("Số ngày mượn không hợp lệ!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+
+            dtSachMuon.Rows.Add(maSach, tenSach, tacGia, soLuong, soNgayMuon, "Đang mượn");
             dgvSachMuon.DataSource = dtSachMuon;
         }
 
@@ -273,28 +286,32 @@ namespace BTL_C_.UCs
 
             try
             {
-                // 1. Tạo phiếu mượn
+
+                int soNgayMuonMax = dtSachMuon.AsEnumerable().Max(r => r.Field<int>("SoNgayMuon"));
                 string sqlPhieu = $@"
-                    INSERT INTO PhieuMuon (NgayMuon, NgayHenTra, MaDG)
-                    VALUES (GETDATE(), DATEADD(day, 14, GETDATE()), '{maDocGiaHienTai}');
-                    SELECT SCOPE_IDENTITY();";
+                INSERT INTO PhieuMuon (NgayMuon, NgayHenTra, MaDG)
+                VALUES (GETDATE(), DATEADD(day, {soNgayMuonMax}, GETDATE()), '{maDocGiaHienTai}');
+                SELECT SCOPE_IDENTITY();";
+
 
                 int maPhieu = Convert.ToInt32(db.ExecuteScalar(sqlPhieu));
 
-                // 2. Thêm chi tiết mượn + cập nhật tồn kho
+
                 foreach (DataRow r in dtSachMuon.Rows)
                 {
                     string maSach = r["MaSach"].ToString();
                     int soLuong = Convert.ToInt32(r["SoLuong"]);
+                    int soNgayMuon = Convert.ToInt32(r["SoNgayMuon"]);
+                    string ngayHenTra = DateTime.Now.AddDays(soNgayMuon).ToString("yyyy-MM-dd");
 
-                    // Thêm chi tiết
+
                     string sqlCT = $@"
-                        INSERT INTO ChiTietMuon (MaPhieu, MaSach, SoLuong, TrangThai)
-                        VALUES ({maPhieu}, '{maSach}', {soLuong}, N'Đang mượn')";
+                    INSERT INTO ChiTietMuon (MaPhieu, MaSach, SoLuong, TrangThai, NgayHenTra)
+                    VALUES ({maPhieu}, '{maSach}', {soLuong}, N'Đang mượn', '{ngayHenTra}')";
 
                     db.CapNhatDuLieu(sqlCT);
 
-                    // Cập nhật tồn kho
+
                     string sqlTon = $"UPDATE Sach SET SoLuong = SoLuong - {soLuong} WHERE MaSach = '{maSach}'";
                     db.CapNhatDuLieu(sqlTon);
                 }
@@ -367,50 +384,44 @@ namespace BTL_C_.UCs
         private void btnInPhieu_Click(object sender, EventArgs e)
         {
 
-            try
-            {
-                // 🔹 Thư mục lưu file PDF trong ổ D
+        
                 string folderPath = @"D:\PDF";
                 if (!Directory.Exists(folderPath))
                 {
                     Directory.CreateDirectory(folderPath);
                 }
 
-                // 🔹 Tạo tên file PDF có thời gian
+                //  Tạo tên file PDF có thời gian
                 string fileName = $"PhieuMuon_{DateTime.Now:yyyyMMdd_HHmmss}.pdf";
                 string filePath = Path.Combine(folderPath, fileName);
 
-                // 🔹 Khởi tạo tài liệu PDF
+                // Khởi tạo tài liệu PDF
                 Document doc = new Document(PageSize.A4, 50, 50, 50, 50);
                 PdfWriter.GetInstance(doc, new FileStream(filePath, FileMode.Create));
                 doc.Open();
 
-                // 🔹 Font Unicode (Arial hỗ trợ tiếng Việt)
+                // Font Unicode (Arial hỗ trợ tiếng Việt)
                 string fontPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Fonts), "arial.ttf");
                 BaseFont bf = BaseFont.CreateFont(fontPath, BaseFont.IDENTITY_H, BaseFont.EMBEDDED);
                 iTextSharp.text.Font titleFont = new iTextSharp.text.Font(bf, 20, iTextSharp.text.Font.BOLD);
                 iTextSharp.text.Font normalFont = new iTextSharp.text.Font(bf, 12, iTextSharp.text.Font.NORMAL);
                 iTextSharp.text.Font tableHeaderFont = new iTextSharp.text.Font(bf, 12, iTextSharp.text.Font.BOLD);
 
-                // 🔹 Tiêu đề phiếu
                 Paragraph title = new Paragraph("PHIẾU MƯỢN SÁCH", titleFont);
                 title.Alignment = Element.ALIGN_CENTER;
                 doc.Add(title);
                 doc.Add(new Paragraph("\n---------------------------------------------\n", normalFont));
 
-                // 🔹 Thông tin người mượn
                 string tenNguoiMuon = string.IsNullOrWhiteSpace(txtHoTen.Text) ? "Không rõ" : txtHoTen.Text;
                 doc.Add(new Paragraph($"Tên người mượn: {tenNguoiMuon}", normalFont));
                 
                 doc.Add(new Paragraph("\nDanh sách sách đang mượn:", normalFont));
                 doc.Add(new Paragraph("\n"));
 
-                // 🔹 Giảm 1 cột để bỏ cột cuối
                 int soCot = dgvSachDangMuon.Columns.Count - 1;
                 PdfPTable table = new PdfPTable(soCot);
                 table.WidthPercentage = 100;
 
-                // 🔹 Thêm tiêu đề cột (trừ cột cuối)
                 for (int i = 0; i < soCot; i++)
                 {
                     PdfPCell cell = new PdfPCell(new Phrase(dgvSachDangMuon.Columns[i].HeaderText, tableHeaderFont));
@@ -419,7 +430,6 @@ namespace BTL_C_.UCs
                     table.AddCell(cell);
                 }
 
-                // 🔹 Thêm dữ liệu từng hàng (trừ cột cuối)
                 foreach (DataGridViewRow row in dgvSachDangMuon.Rows)
                 {
                     if (!row.IsNewRow)
@@ -432,23 +442,17 @@ namespace BTL_C_.UCs
                     }
                 }
 
-                // 🔹 Thêm bảng vào tài liệu
                 doc.Add(table);
 
-                doc.Add(new Paragraph("\nChữ ký thủ thư: ae tổng 9", normalFont));
+                doc.Add(new Paragraph("\nChữ ký thủ thư: CNTT2-K64", normalFont));
                 doc.Close();
 
-                // 🔹 Thông báo + mở file PDF
-                MessageBox.Show($"✅ Phiếu mượn đã được lưu tại:\n{filePath}",
+                MessageBox.Show($"Phiếu mượn đã được lưu tại:\n{filePath}",
                                 "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 System.Diagnostics.Process.Start(filePath);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("❌ Lỗi khi tạo phiếu: " + ex.Message,
-                                "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            
+        
 
 
 
