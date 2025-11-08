@@ -30,15 +30,16 @@ namespace BTL_C_
             this.btnThongKe = new System.Windows.Forms.Button();
             this.btnSach = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.thongKe1 = new BTL_C_.UCs.ThongKe();
-            this.phieuMuon2 = new BTL_C_.UCs.PhieuMuon();
-            this.docGia1 = new BTL_C_.UCs.DocGia();
-            this.searchSach1 = new BTL_C_.SearchSach();
             this.panel3 = new System.Windows.Forms.Panel();
             this.ptAvartar = new System.Windows.Forms.PictureBox();
             this.lbTen = new System.Windows.Forms.Label();
             this.ptLogo = new System.Windows.Forms.PictureBox();
             this.ucQuanLyNhanVien1 = new BTL_C_.UCs.ucQuanLyNhanVien();
+            this.thongKe1 = new BTL_C_.UCs.ThongKe();
+            this.phieuMuon2 = new BTL_C_.UCs.PhieuMuon();
+            this.docGia1 = new BTL_C_.UCs.DocGia();
+            this.searchSach1 = new BTL_C_.SearchSach();
+            this.taiKhoan1 = new BTL_C_.UCs.TaiKhoan();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -191,6 +192,7 @@ namespace BTL_C_
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.taiKhoan1);
             this.panel2.Controls.Add(this.ucQuanLyNhanVien1);
             this.panel2.Controls.Add(this.thongKe1);
             this.panel2.Controls.Add(this.phieuMuon2);
@@ -200,42 +202,6 @@ namespace BTL_C_
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1010, 660);
             this.panel2.TabIndex = 1;
-            // 
-            // thongKe1
-            // 
-            this.thongKe1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.thongKe1.Location = new System.Drawing.Point(0, 0);
-            this.thongKe1.Name = "thongKe1";
-            this.thongKe1.Size = new System.Drawing.Size(1010, 660);
-            this.thongKe1.TabIndex = 3;
-            // 
-            // phieuMuon2
-            // 
-            this.phieuMuon2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.phieuMuon2.Location = new System.Drawing.Point(0, 0);
-            this.phieuMuon2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.phieuMuon2.Name = "phieuMuon2";
-            this.phieuMuon2.Size = new System.Drawing.Size(1010, 660);
-            this.phieuMuon2.TabIndex = 2;
-            // 
-            // docGia1
-            // 
-            this.docGia1.BackColor = System.Drawing.Color.Azure;
-            this.docGia1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.docGia1.Location = new System.Drawing.Point(0, 0);
-            this.docGia1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.docGia1.Name = "docGia1";
-            this.docGia1.Size = new System.Drawing.Size(1010, 660);
-            this.docGia1.TabIndex = 1;
-            // 
-            // searchSach1
-            // 
-            this.searchSach1.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.searchSach1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.searchSach1.Location = new System.Drawing.Point(0, 0);
-            this.searchSach1.Name = "searchSach1";
-            this.searchSach1.Size = new System.Drawing.Size(1010, 660);
-            this.searchSach1.TabIndex = 0;
             // 
             // panel3
             // 
@@ -282,11 +248,58 @@ namespace BTL_C_
             // 
             // ucQuanLyNhanVien1
             // 
+            this.ucQuanLyNhanVien1.BackColor = System.Drawing.Color.LightCyan;
             this.ucQuanLyNhanVien1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ucQuanLyNhanVien1.Location = new System.Drawing.Point(0, 0);
             this.ucQuanLyNhanVien1.Name = "ucQuanLyNhanVien1";
-            this.ucQuanLyNhanVien1.Size = new System.Drawing.Size(1515, 990);
+            this.ucQuanLyNhanVien1.Size = new System.Drawing.Size(1010, 660);
             this.ucQuanLyNhanVien1.TabIndex = 4;
+            // 
+            // thongKe1
+            // 
+            this.thongKe1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.thongKe1.Location = new System.Drawing.Point(0, 0);
+            this.thongKe1.Name = "thongKe1";
+            this.thongKe1.Size = new System.Drawing.Size(1010, 660);
+            this.thongKe1.TabIndex = 3;
+            // 
+            // phieuMuon2
+            // 
+            this.phieuMuon2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.phieuMuon2.Location = new System.Drawing.Point(0, 0);
+            this.phieuMuon2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.phieuMuon2.Name = "phieuMuon2";
+            this.phieuMuon2.Size = new System.Drawing.Size(1010, 660);
+            this.phieuMuon2.TabIndex = 2;
+            // 
+            // docGia1
+            // 
+            this.docGia1.BackColor = System.Drawing.Color.Azure;
+            this.docGia1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.docGia1.Location = new System.Drawing.Point(0, 0);
+            this.docGia1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.docGia1.Name = "docGia1";
+            this.docGia1.Size = new System.Drawing.Size(1010, 660);
+            this.docGia1.TabIndex = 1;
+            // 
+            // searchSach1
+            // 
+            this.searchSach1.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.searchSach1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.searchSach1.Location = new System.Drawing.Point(0, 0);
+            this.searchSach1.Name = "searchSach1";
+            this.searchSach1.Size = new System.Drawing.Size(1010, 660);
+            this.searchSach1.TabIndex = 0;
+            // 
+            // taiKhoan1
+            // 
+            this.taiKhoan1.BackColor = System.Drawing.Color.LightCyan;
+            this.taiKhoan1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.taiKhoan1.Location = new System.Drawing.Point(0, 0);
+            this.taiKhoan1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.taiKhoan1.Name = "taiKhoan1";
+            this.taiKhoan1.Size = new System.Drawing.Size(1010, 660);
+            this.taiKhoan1.TabIndex = 5;
             // 
             // QLThuVien
             // 
@@ -336,5 +349,6 @@ namespace BTL_C_
         private DocGia docGia1;
         private ThongKe thongKe1;
         private ucQuanLyNhanVien ucQuanLyNhanVien1;
+        private TaiKhoan taiKhoan1;
     }
 }

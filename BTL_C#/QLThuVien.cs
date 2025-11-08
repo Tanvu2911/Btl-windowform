@@ -97,6 +97,7 @@ namespace BTL_C_
         {
             scoll.Height = btnTaiKhoan.Height;
             scoll.Top = btnTaiKhoan.Top;
+            taiKhoan1.BringToFront();
         }
 
         private void ptLogo_Click(object sender, EventArgs e)
